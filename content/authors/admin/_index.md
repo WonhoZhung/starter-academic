@@ -1,17 +1,17 @@
 ---
 # Display name
-title: Nelson Bighetti
+title: Wonho Zhung
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position/tagline
-role: Professor of Artificial Intelligence
+role: Ph.D. student in Chemistry, KAIST
 
 # Organizations/Affiliations to show in About widget
-organizations:
-- name: Stanford University
-  url: https://www.stanford.edu/
+# organizations:
+# - name: Stanford University
+#   url: https://www.stanford.edu/
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include distributed robotics, mobile computing and programmable matter.
