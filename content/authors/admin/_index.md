@@ -27,10 +27,10 @@ interests:
 # Education to show in About widget
 education:
   courses:
-  - course: BSc in Chemistry (Double Major: Biology)
+  - course: BSc in Chemistry and Biological Science (Double Major)
     institution: KAIST
     year: 2020
-
+    
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
