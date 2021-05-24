@@ -30,15 +30,15 @@ image:
 
 authors:
 - admin
-- 吳恩達
+- Wonho Zhung
 
 tags:
 - Academic
-- 开源
+- Wonho Zhung
 
 categories:
 - Demo
-- 教程
+- Wonho Zhung
 ---
 
 ## Overview
