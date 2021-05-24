@@ -1,5 +1,5 @@
 ---
-title: "An example conference paper"
+title: "PIGNet: A physics-informed deep learning model toward generalized drug-target interaction predictions"
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here 
