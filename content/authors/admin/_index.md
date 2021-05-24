@@ -66,8 +66,6 @@ email: ""
 highlight_name: false
 ---
 
-I am a Chemistry Ph.D. student at KAIST, and part of the Intelligent Chemistry Lab (PI: Wooyoun Kim).
-
-My research Topic is ~
+I am a Chemistry Ph.D. student at KAIST, and part of the Intelligent Chemistry Lab (PI: Prof. Wooyoun Kim). My research topic is to solve chemical and biological problems using deep learning. Specifically, my goal is to find the hit compound by predicting the binding affinity, docking pose, etc. via drug-target complex modeling. My other interests include various 3D representations such as graphs and point clouds, and related equivariant neural networks. 
 
 Besides research, I enjoy playing the violin, and running the marathon. As a violinist in KAIST orchestra, I love to play classical music with others.
