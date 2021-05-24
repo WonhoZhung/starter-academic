@@ -68,7 +68,6 @@ highlight_name: false
 
 I am a Chemistry Ph.D. student at KAIST, and part of the Intelligent Chemistry Lab (PI: Wooyoun Kim). 
 My research Topic is ~
-
 Besides research, I enjoy playing the violin, and running the marathon. As a violinist in KAIST orchestra, I love to play classical music with others.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
