@@ -33,7 +33,8 @@ experience:
         (Supervised by Prof. Wooyoun Kim, Dept. of Chemistry, KAIST)              
                                                                                   
   - title: MGH-MIT-KAIST Summer Internship Program                                
-    company: Wellman Center for Photomedicine                                     
+    company: Wellman Center for Photomedicine
+    company_url: 'https://wellman.massgeneral.org/'
     location: Massachusetts General Hospital (MGH), Boston, USA                   
     date_start: '2019-07-01'                                                      
     date_end: '2019-08-31'                                                        
