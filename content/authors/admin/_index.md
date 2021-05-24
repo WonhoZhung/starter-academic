@@ -9,7 +9,7 @@ superuser: true
 role: Ph.D. student in Chemistry, KAIST
 
 # Organizations/Affiliations to show in About widget
-# organizations:
+organizations:
 - name: Intelligent Chemistry Lab
   url: https://aceteamkaist.wixsite.com/home
 
