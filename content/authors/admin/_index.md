@@ -10,8 +10,8 @@ role: Ph.D. student in Chemistry, KAIST
 
 # Organizations/Affiliations to show in About widget
 # organizations:
-# - name: Stanford University
-#   url: https://www.stanford.edu/
+- name: Intelligent Chemistry Lab
+  url: https://aceteamkaist.wixsite.com/home
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include distributed robotics, mobile computing and programmable matter.
