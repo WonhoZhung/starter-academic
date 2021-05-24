@@ -42,7 +42,7 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: "zpeter97@kaist.ac.kr"
+  link: "mailto:zpeter97@kaist.ac.kr"
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/one_know_wonho
