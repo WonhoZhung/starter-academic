@@ -19,16 +19,16 @@ bio: My research interests include drug discovery via deep-learning based approa
 # Interests to show in About widget
 interests:
 - AI for chemical & biological application
-- Drug-Target Interaction (DTI)
 - Computer-Aided Drug Design (CADD)
-- Graph Neural Networks (GNNs), Equivariant Neural Networks (ENNs)
-- DL-based molecular docking
+- Graph Neural Networks (GNNs)
+- Equivariant Neural Networks (ENNs)
+- DL-based molecular docking & scoring
 
 # Education to show in About widget
 education:
   courses:
   - course: BSc in Chemistry and Biological Science (Double Major)
-    institution: KAIST
+    institution: Korea Advanced Institute of Science and Technology (KAIST)
     year: 2020
     
 # Social/Academic Networking
