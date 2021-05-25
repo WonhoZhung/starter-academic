@@ -41,7 +41,7 @@ abstract: Recently, deep neural network (DNN)-based drug-target interaction (DTI
 tags: ["Drug-Target Interaction", "Graph Neural Network", "Physics-informed Model", "Deep Learning"]
 
 # Display this page in the Featured widget?
-featured: false
+featured: true
 
 # Custom links (uncomment lines below)
 # links:
@@ -76,6 +76,6 @@ projects: []
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
-slides: []
+slides: ""
 
 
