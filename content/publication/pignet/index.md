@@ -18,7 +18,7 @@ author_notes:
 - "Equal contribution"
 
 date: "2020-08-22T00:00:00Z"
-doi: "arXiv:2008.12249"
+# doi: "arXiv:2008.12249"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2020-08-22T00:00:00Z"
@@ -38,10 +38,10 @@ abstract: Recently, deep neural network (DNN)-based drug-target interaction (DTI
 # Summary. An optional shortened abstract.
 # summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 
-tags: []
+tags: ["Drug-Target Interaction", "Graph Neural Network", "Physics-informed Model", "Deep Learning"]
 
 # Display this page in the Featured widget?
-featured: true
+featured: false
 
 # Custom links (uncomment lines below)
 # links:
@@ -69,23 +69,12 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-projects:
-- example
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
-slides: example
----
 
-{{% callout note %}}
-Click the *Cite* button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /callout %}}
 
-{{% callout note %}}
-Create your slides in Markdown - click the *Slides* button to check out the example.
-{{% /callout %}}
 
-Supplementary notes can be added here, including [code, math, and images](https://wowchemy.com/docs/writing-markdown-latex/).
