@@ -18,7 +18,7 @@ author_notes:
 - "Equal contribution"
 
 date: "2020-08-22T00:00:00Z"
-doi: "arXiv:2008.12249"
+# doi: "arXiv:2008.12249"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2020-08-22T00:00:00Z"
@@ -41,7 +41,7 @@ abstract: Recently, deep neural network (DNN)-based drug-target interaction (DTI
 tags: ["Drug-Target Interaction", "Graph Neural Network", "Physics-informed Model", "Deep Learning"]
 
 # Display this page in the Featured widget?
-featured: true
+featured: false
 
 # Custom links (uncomment lines below)
 # links:
@@ -78,4 +78,4 @@ projects: []
 #   Otherwise, set `slides: ""`.
 slides: ""
 
-
+---
