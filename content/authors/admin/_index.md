@@ -14,7 +14,7 @@ organizations:
   url: https://aceteamkaist.wixsite.com/home
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include drug discovery via deep-learning based approach.
+bio: My research interests include applying deep learning to solve problems in chemistry and biology.
 
 # Interests to show in About widget
 interests:
