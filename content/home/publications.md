@@ -34,9 +34,5 @@ design:
   #   2 = Compact
   #   3 = Card
   #   4 = Citation (publication only)
-  view: 4
+  view: 2
 ---
-
-# {{% callout note %}}
-# Quickly discover relevant content by [filtering publications](./publication/).
-# {{% /callout %}}
