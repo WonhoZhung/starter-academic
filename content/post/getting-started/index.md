@@ -31,10 +31,10 @@ authors:
 - admin
 
 tags:
-- Deep Learning
+- Hodu
 
 categories:
-- Deep Learning
+- Photo
 
 ---
 
