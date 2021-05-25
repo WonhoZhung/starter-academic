@@ -22,7 +22,7 @@ featured: false
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
 image:
-  caption: ""
+  caption: "photo my me"
   focal_point: ""
   placement: 2
   preview_only: false
@@ -38,6 +38,6 @@ categories:
 
 ---
 
-## Hi
+## Hi 👋
 
 Welcome to my blog :)
