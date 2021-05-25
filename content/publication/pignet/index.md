@@ -18,7 +18,7 @@ author_notes:
 - "Equal contribution"
 
 date: "2020-08-22T00:00:00Z"
-# doi: "arXiv:2008.12249"
+doi: "arXiv:2008.12249"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2020-08-22T00:00:00Z"
