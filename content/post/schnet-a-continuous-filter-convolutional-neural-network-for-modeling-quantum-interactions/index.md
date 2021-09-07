@@ -23,11 +23,9 @@ This post is based on a paper [SchNet: A Continuous-filter convolutional neural 
 4. Remarks from the experiments
 
 <br>
-<br>
 
 ---
 
-<br>  
 <br>  
 
 #### 1. Backgrounds
