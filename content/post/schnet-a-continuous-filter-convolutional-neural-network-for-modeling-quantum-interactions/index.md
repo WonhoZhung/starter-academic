@@ -9,7 +9,7 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-This post is based on a paper [SchNet: A Continuous-filter convolutional neural network for modeling quantum interactions](https://papers.nips.cc/paper/2017/file/303ed4c69846ab36c2904d3ba8573050-Paper.pdf) by [Kristof T. Schütt](https://www.bakerlab.org/) at [NIPS 2017](https://papers.nips.cc/paper/2017).
+This post is based on a paper [SchNet: A Continuous-filter convolutional neural network for modeling quantum interactions](https://papers.nips.cc/paper/2017/file/303ed4c69846ab36c2904d3ba8573050-Paper.pdf) by [Kristof T. Schütt](https://scholar.google.de/citations?user=0e49RfgAAAAJ) at [NIPS 2017](https://papers.nips.cc/paper/2017).
 
 > We propose _SchNet_: a neural network specifically designed to respect essential quantum chemical constraints. _Schnet_ delivers both rotationally invariant energy prediction and rotationally equivariant force predictions.
 
