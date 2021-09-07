@@ -6,6 +6,8 @@ draft: false
 featured: false
 tags:
   - CASP
+  - Protein Folding
+  - Bioinformatics
 image:
   filename: 그림1.jpg
   focal_point: Smart
