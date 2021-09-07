@@ -18,9 +18,11 @@ This post is based on a paper [SchNet: A Continuous-filter convolutional neural 
 2. Objectives
 3. Proposed architecture of _SchNet_
 4. Remarks from the experiments
+  
 
 ---
-
+  
+  
 1. Backgrounds
 1. Objectives
 1. Continuous-filter convolutions
