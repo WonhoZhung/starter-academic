@@ -2,11 +2,17 @@
 title: "SchNet: A Continuous-filter convolutional neural network for modeling
   quantum interactions"
 date: 2021-09-07T01:53:07.741Z
-draft: true
+draft: false
 featured: false
 image:
   filename: featured
   focal_point: Smart
   preview_only: false
 ---
-In this post, 
+This post is based on a paper [SchNet: A Continuous-filter convolutional neural network for modeling quantum interactions](https://papers.nips.cc/paper/2017/file/303ed4c69846ab36c2904d3ba8573050-Paper.pdf) by [Kristof T. Schütt](https://www.bakerlab.org/) at [NIPS 2017](https://papers.nips.cc/paper/2017).
+
+> We propose _SchNet_: a neural network specifically designed to respect essential quantum chemical constraints. _Schnet_ delivers both rotationally invariant energy prediction and rotationally equivariant force predictions.
+
+1. Continuous-filter convolutions
+- The discrete filter is unable to capture the continuous changes in positions of the atoms, resulting in the discontinuous energy predictions.
+- On the other hand, the continuous filter can capture the arbitrary positions of the atoms, and yield smooth energy predictions.
