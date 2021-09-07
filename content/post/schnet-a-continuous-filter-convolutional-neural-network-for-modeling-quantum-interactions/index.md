@@ -21,17 +21,21 @@ This post is based on a paper [SchNet: A Continuous-filter convolutional neural 
 2. Objectives
 3. Proposed architecture of _SchNet_
 4. Remarks from the experiments
+
 <br>
 <br>
+
 ---
+
 <br>  
 <br>  
+
 #### 1. Backgrounds
 
 #### 2. Objectives
 
 #### 3. Proposed architecture of _SchNet_
-#####(a) Continuous-filter convolutions
+##### (a) Continuous-filter convolutions
 - The discrete filter is unable to capture the continuous changes in positions of the atoms, resulting in the discontinuous energy predictions.
 - On the other hand, the continuous filter can capture the arbitrary positions of the atoms, and yield smooth energy predictions.
 
