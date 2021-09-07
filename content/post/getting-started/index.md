@@ -1,41 +1,22 @@
 ---
 title: My First Post
-
-# Summary for listings and search engines
+date: 2021-05-25T00:00:00Z
 summary: Welcome 👋
-
-# Link this post with a project
-projects: []
-
-# Date published
-date: "2021-05-25T00:00:00Z"
-
-# Date updated
-lastmod: "2021-05-25T00:00:00Z"
-
-# Is this an unpublished draft?
 draft: false
-
-# Show this page in the Featured widget?
 featured: false
-
-# Featured image
-# Place an image named `featured.jpg/png` in this page's folder and customize its options here.
+authors:
+  - admin
+lastmod: 2021-05-25T00:00:00Z
+tags:
+  - Hodu
+categories:
+  - Photo
+projects: []
 image:
-  caption: "photo my me"
+  caption: ""
   focal_point: ""
   placement: 2
   preview_only: false
-
-authors:
-- admin
-
-tags:
-- Hodu
-
-categories:
-- Photo
-
 ---
 
 ## Hi 👋
