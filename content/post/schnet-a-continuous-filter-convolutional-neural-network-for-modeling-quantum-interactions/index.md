@@ -4,6 +4,9 @@ title: "SchNet: A Continuous-filter convolutional neural network for modeling
 date: 2021-09-07T01:53:07.741Z
 draft: false
 featured: false
+tags:
+  - Paper Summary
+  - Invariance
 image:
   filename: featured
   focal_point: Smart
