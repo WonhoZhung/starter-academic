@@ -13,6 +13,16 @@ This post is based on a paper [SchNet: A Continuous-filter convolutional neural 
 
 > We propose _SchNet_: a neural network specifically designed to respect essential quantum chemical constraints. _Schnet_ delivers both rotationally invariant energy prediction and rotationally equivariant force predictions.
 
+### OUTLINE:
+1. Backgrounds
+2. Objectives
+3. Proposed architecture of _SchNet_
+4. Remarks from the experiments
+
+---
+
+1. Backgrounds
+1. Objectives
 1. Continuous-filter convolutions
 - The discrete filter is unable to capture the continuous changes in positions of the atoms, resulting in the discontinuous energy predictions.
 - On the other hand, the continuous filter can capture the arbitrary positions of the atoms, and yield smooth energy predictions.
