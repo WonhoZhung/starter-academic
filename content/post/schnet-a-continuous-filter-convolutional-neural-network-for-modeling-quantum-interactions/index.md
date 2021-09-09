@@ -29,6 +29,7 @@ This post is based on a paper [SchNet: A Continuous-filter convolutional neural 
 <br>  
 
 #### 1. Backgrounds
+$G$ is $(A,E,F)$
 
 #### 2. Objectives
 
