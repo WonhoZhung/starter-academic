@@ -62,19 +62,19 @@ $$z=\sigma\left(\frac{1}{\tau}\cdot(logp-log(1-p)+logu-log(1-u))\right)$$
 
 이제 결과를 살펴보자. 먼저, synthetic data에 대한 분석이다. 데이터의 개수가 늘어남에 따라 epistemic uncertainty는 감소하며, aleatoric uncertainty는 이에 영향받지 않음을 확인할 수 있다. 또한, (d)에서 dropout probability가 데이터 개수가 증가함에 따라 hand-tune 했을 때와 같은 경향으로, 점차 0에 가까워지는 것을 확인할 수 있다.
 
-![Untitled 0](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%200.png)
+![Untitled 0](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%200.png?raw=true)
 
 MNIST benchmark에 대해서도 test를 하였는데, model size와 dataset size를 바꿔가며 각 layer 별 dropout parameter를 plot하였다. 데이터셋 크기가 커질수록 첫 두 layer의 $p$가 0으로 수렴하였으며, 이는 위 실험의 결과와 일치한다. 또한, 모델의 크기가 커질수록 epistemic uncertainty가 증가하며, 이에 따라 $p$ 또한 커지는 것을 확인할 수 있었다.
 
-![Untitled 1](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%201.png)
+![Untitled 1](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%201.png?raw=true)
 
 다음은 sementic segmentation task에서의 방법에 따른 모델 성능(Intersection over Union; IoU)을 비교하였다. MC sampling을 하지 않은 경우보다 한 경우 IoU가 더 높았으며, Concrete dropout을 사용한 모델이 $p$를 고정하였을 때 보다 조금 더 좋은 결과를 보여주었다. 또한, uncertainty calibration 면에서도 Concrete dropout 모델의 RMSE 값이 가장 낮았다. 
 
-![Untitled 2](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%202.png)
+![Untitled 2](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%202.png?raw=true)
 
 마지막으로 multi-episode RL에서 Concrete dropout을 적용하여 episode가 진행됨에 따른 $p$와 epistemic uncertainty를 분석하였다. 점점 더 많은 데이터가 수집되면서, $p$가 점점 감소하는 것을 확인할 수 있었다. 또한, Cartpole example에서의 $x,\dot{x},\theta,\dot{\theta}$에 대한 epistemic uncertainty가 episode가 진행되면서 점차 감소하는 것을 확인할 수 있었다.
 
-![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%203.png)
+![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%203.png?raw=true)
 
 ### 3. Opinion
 
