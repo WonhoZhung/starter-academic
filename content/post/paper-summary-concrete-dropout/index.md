@@ -3,6 +3,9 @@ title: "Paper Summary: Concrete Dropout"
 date: 2021-09-12T12:46:25.047Z
 draft: false
 featured: false
+tags:
+  - Paper Summary
+  - Bayesian
 image:
   filename: featured
   focal_point: Smart
