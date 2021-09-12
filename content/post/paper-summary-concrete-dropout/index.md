@@ -58,10 +58,6 @@ $$z=\sigma\left(\frac{1}{\tau}\cdot(logp-log(1-p)+logu-log(1-u))\right)$$
 
 <br>
 
----
-
-<br>
-
 이제 결과를 살펴보자. 먼저, synthetic data에 대한 분석이다. 데이터의 개수가 늘어남에 따라 epistemic uncertainty는 감소하며, aleatoric uncertainty는 이에 영향받지 않음을 확인할 수 있다. 또한, (d)에서 dropout probability가 데이터 개수가 증가함에 따라 hand-tune 했을 때와 같은 경향으로, 점차 0에 가까워지는 것을 확인할 수 있다.
 
 ![Untitled 0](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%200.png?raw=true)
