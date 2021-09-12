@@ -26,7 +26,7 @@ image:
 
 본 논문에서는 **concrete dropout**이라는 새로운 Bayesian inferencing method를 소개한다. Dropout 확률이 gradient method로 학습되는 방법이며, 이를 통해 더 나은 uncertainty calibration을 할 수 있다고 주장한다. 먼저 방법론과 관련 이론들을 살펴보자.
 
-Dropout 확률을 학습시키기 위해서는 dropout의 **variational interpretation**으로부터 출발해야한다. Dropout을 사용하면 $L$개의 layer를 가진 random weight matrices의 set $w=\{W_l\}^L_{l=1}$와 variational parameters의 set $\theta$에 대해서, 분포 $q_\theta (\omega)$를 Bayesian NN의 posterior로 approximate 할 수 있다. 이때 최소화해야하는 objective function은 아래와 같다.
+Dropout 확률을 학습시키기 위해서는 dropout의 **variational interpretation**으로부터 출발해야한다. Dropout을 사용하면 $L$개의 layer를 가진 random weight matrices의 set $w=\\{W_l\\}^L_{l=1}$와 variational parameters의 set $\theta$에 대해서, 분포 $q_\theta (\omega)$를 Bayesian NN의 posterior로 approximate 할 수 있다. 이때 최소화해야하는 objective function은 아래와 같다.
 
 $$
 \hat{L}_{MC}(\theta) = -\frac{1}{M} \sum_{i\in{S}}logp(y_{i}|f^\omega(x_i))+\frac{1}{N} KL(q_\theta(\omega)||p(\omega))
