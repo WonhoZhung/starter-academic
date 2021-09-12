@@ -76,6 +76,6 @@ MNIST benchmark에 대해서도 test를 하였는데, model size와 dataset size
 
 ### 3. Opinion
 
-Bayesian inferencing에 관련된 논문들 중에서 가장 궁금했던 논문이었다. 항상 hyper-parameter로만 생각해왔던 dropout ratio를 gradient method로 optimize 한다는 아이디어가 정말 독창적이라고 생각했다. Calibrate 된 $p$를 통해 기존의 uncertainty와 dataset size, model size간의 관련성을 설명할 수 있었으며, hand-tune 하는 것보다 나은 model 성능을 얻을 수 있었던 것에서 이 방법론의 활용 가치가 충분하다고 생각한다. Concrete distribution 대신 Gumbel distribution으로 p를 re-parameterize하면 성능에 어떻게 영향을 미칠지 궁금하다.
+Bayesian inferencing에 관련된 논문들 중에서 가장 궁금했던 논문이었다. 항상 hyper-parameter로만 생각해왔던 dropout ratio를 gradient method로 optimize 한다는 아이디어가 정말 독창적이라고 생각했다. Calibrate 된 $p$를 통해 기존의 uncertainty와 dataset size, model size간의 관련성을 설명할 수 있었으며, hand-tune 하는 것보다 나은 model 성능을 얻을 수 있었던 것에서 이 방법론의 활용 가치가 충분하다고 생각한다. Concrete distribution 대신 Gumbel distribution으로 $p$를 re-parameterize하면 성능에 어떻게 영향을 미칠지 궁금하다.
 
 $$***$$
