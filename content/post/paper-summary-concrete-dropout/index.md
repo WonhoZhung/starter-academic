@@ -18,7 +18,7 @@ image:
 
 ### 1. Intro
 
-모델의 예측 불확실성 (**uncertainty**)를 잘 calibrate 하는 것은 자율 주행과 같은 심층 학습 문제에서 굉장히 중요하다. 이를 위한 한 가지 방법이 **dropout**을 이용한 Bayesian inferencing이다. 이는 학습 과정 뿐 아니라 test time에서도 dropout을 하여 모델의 predictive distribution을 만드는 방법이다. 하지만 이를 잘 수행하기 위해서는 dropout의 확률을 잘 calibrate하여야 하는데, 보통 이는 grid-search 방법을 통해 수행되었다. 하지만 이방법에는 한계점이 있는데, 일단 많은 시간과 계산 자원이 필요하며, dynamic하게 dropout 확률이 변해야하는 상황 (e.g. RL) 에는 적용이 불가능하다는 것이다. 따라서, 좋은 모델 성능과 uncertainty 예측을 위해 dropout 확률을 모델 학습 과정에서 최적화하는 방법이 필요하다.
+모델의 예측 불확실성(**uncertainty**)를 잘 calibrate 하는 것은 자율 주행과 같은 심층 학습 문제에서 굉장히 중요하다. 이를 위한 한 가지 방법이 **dropout**을 이용한 Bayesian inferencing이다. 이는 학습 과정 뿐 아니라 test time에서도 dropout을 하여 모델의 predictive distribution을 만드는 방법이다. 하지만 이를 잘 수행하기 위해서는 dropout의 확률을 잘 calibrate하여야 하는데, 보통 이는 grid-search 방법을 통해 수행되었다. 하지만 이방법에는 한계점이 있는데, 일단 많은 시간과 계산 자원이 필요하며, dynamic하게 dropout 확률이 변해야하는 상황(e.g. RL)에는 적용이 불가능하다는 것이다. 따라서, 좋은 모델 성능과 uncertainty 예측을 위해 dropout 확률을 모델 학습 과정에서 최적화하는 방법이 필요하다.
 
 본격적인 내용에 들어가기에 앞서, 사전 지식으로 model uncertainty에 대해 짚고 넘어가자. Model uncertainty는 크게 **epistemic uncertainty**와 **aleatoric uncertainty**로 나뉠 수 있다. 간단하게 이야기하면, 전자는 모델에서 발생하는 uncertainty이며 후자는 데이터에서 발생하는 uncertainty이다. Epistemic uncertainty는 모델을 앙상블하여 그 variance를 통해 estimate 할 수 있으며 aleatoric uncertainty는 학습 과정에서 data variance를 함께 학습하여 estimate 할 수 있다. 이 두 uncertainty를 합한 것이 **predictive uncertainty**이다. 
 
@@ -30,7 +30,7 @@ Dropout 확률을 학습시키기 위해서는 dropout의 **variational interpre
 
 $$\hat{L}_ {MC}(\theta) = -\frac{1}{M}\sum_{i\in{S}}logp(y_{i}|f^\omega(x_i))+\frac{1}{N}KL(q_\theta(\omega)||p(\omega))$$
 
-여기서 $N$은 데이터의 개수, $S$는 $M$개의 데이터를 갖는 random set, $f^\omega (x_i)$는 model output이다. KL divergence term은 regularisation을 위한 term으로, posterior가 prior distribution $p(\omega)$으로부터 너무 벗어나지 않도록 해준다. 이때 variational parameters의 set $\theta$이 dropout 분포에 대해 $\theta=\\{M_l,p_l\\}^L_{l=1}$을 만족한다고 가정하다. 이때 $M_l$은 mean weight matrix, $p_l$은 dropout 확률이며 아래와 같은 식을 만족한다. (여기서 $W_l$의 dimension은 $K_{l+1}\times K_l$이다.)
+여기서 $N$은 데이터의 개수, $S$는 $M$개의 데이터를 갖는 random set, $f^\omega (x_i)$는 model output이다. KL divergence term은 regularisation을 위한 term으로, posterior가 prior distribution $p(\omega)$으로부터 너무 벗어나지 않도록 해준다. 이때 variational parameters의 set $\theta$이 dropout 분포에 대해 $\theta=\\{M_l,p_l\\}^L_{l=1}$을 만족한다고 가정하다. 이때 $M_l$은 mean weight matrix, $p_l$은 dropout 확률이며 아래와 같은 식을 만족한다. 여기서 $W_l$의 dimension은 $K_{l+1}\times K_l$이다.
 
 $$q_\theta(\omega)=\prod_{l}q_{M_l}(W_l), q_{M_l}(W_l)=M_l\cdot diag[Bernoulli(1-p_l)^{K_l}]$$
 
