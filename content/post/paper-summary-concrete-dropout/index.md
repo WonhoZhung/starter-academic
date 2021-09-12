@@ -1,5 +1,5 @@
 ---
-title: "Paper Summary: Concrete Dropout"
+title: Concrete Dropout
 date: 2021-09-12T12:46:25.047Z
 summary: This post is based on a paper Concrete Dropout by Yarin Gal, Jiri Horn,
   and Alex Kendall at NIPS 2017.
@@ -14,7 +14,7 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-## Concrete Dropout ([https://papers.nips.cc/paper/6949-concrete-dropout.pdf](https://papers.nips.cc/paper/6949-concrete-dropout.pdf))
+## Paper Summary: Concrete Dropout ([https://papers.nips.cc/paper/6949-concrete-dropout.pdf](https://papers.nips.cc/paper/6949-concrete-dropout.pdf))
 
 ### 1. Intro
 
