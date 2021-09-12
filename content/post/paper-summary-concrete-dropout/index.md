@@ -57,6 +57,7 @@ $$z=\sigma\left(\frac{1}{\tau}\cdot(logp-log(1-p)+logu-log(1-u))\right)$$
 이러한 discrete random variable에 대한 re-parameterization trick을 통해 $p$를 학습시킬 수 있다.
 
 <br>
+
 ---
 
 <br>
