@@ -1,12 +1,12 @@
 ---
 title: My First Post
-date: 2021-05-25T00:00:00Z
+date: 2021-05-25T00:00:00.000Z
 summary: Welcome 👋
 draft: false
 featured: false
 authors:
   - admin
-lastmod: 2021-05-25T00:00:00Z
+lastmod: 2021-05-25T00:00:00.000Z
 tags:
   - Hodu
 categories:
@@ -22,3 +22,5 @@ image:
 ## Hi 👋
 
 Welcome to my blog :)
+
+TBD, about me
