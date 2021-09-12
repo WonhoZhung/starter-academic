@@ -32,7 +32,7 @@ $$
 \hat{L}_{MC}(\theta) = -\frac{1}{M} \sum_{i\in{S}}logp(y_{i}|f^\omega(x_i))+\frac{1}{N} KL(q_\theta(\omega)||p(\omega))
 $$
 
-여기서 $N$은 데이터의 개수, $S$는 $M$개의 데이터를 갖는 random set, $f^\omega (x_i)$는 model output이다. KL divergence term은 regularisation을 위한 term으로, posterior가 prior distribution $p(\omega)$으로부터 너무 벗어나지 않도록 해준다. 이때 variational parameters의 set $\theta$이 dropout 분포에 대해 $\theta=\{M_l,p_l\}^L_{l=1}$을 만족한다고 가정하다. 이때 $M_l$은 mean weight matrix, $p_l$은 dropout 확률이며 아래와 같은 식을 만족한다. (여기서 $W_l$의 dimension은 $K_{l+1}\times K_l$이다.)
+여기서 $N$은 데이터의 개수, $S$는 $M$개의 데이터를 갖는 random set, $f^\omega (x_i)$는 model output이다. KL divergence term은 regularisation을 위한 term으로, posterior가 prior distribution $p(\omega)$으로부터 너무 벗어나지 않도록 해준다. 이때 variational parameters의 set $\theta$이 dropout 분포에 대해 $\theta=\\{M_l,p_l\\}^L_{l=1}$을 만족한다고 가정하다. 이때 $M_l$은 mean weight matrix, $p_l$은 dropout 확률이며 아래와 같은 식을 만족한다. (여기서 $W_l$의 dimension은 $K_{l+1}\times K_l$이다.)
 
 $$q_\theta(\omega)=\prod_{l}q_{M_l}(W_l), q_{M_l}(W_l)=M_l\cdot diag[Bernoulli(1-p_l)^{K_l}]$$
 
