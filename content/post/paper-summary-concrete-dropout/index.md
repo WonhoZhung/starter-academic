@@ -28,7 +28,7 @@ image:
 
 Dropout 확률을 학습시키기 위해서는 dropout의 **variational interpretation**으로부터 출발해야한다. Dropout을 사용하면 $L$개의 layer를 가진 random weight matrices의 set $w=\\{W_l\\}^L_{l=1}$와 variational parameters의 set $\theta$에 대해서, 분포 $q_\theta (\omega)$를 Bayesian NN의 posterior로 approximate 할 수 있다. 이때 최소화해야하는 objective function은 아래와 같다.
 
-$$\hat{L}__{MC}(\theta) = -\frac{1}{M}\sum_{i\in{S}}logp(y_{i}|f^\omega(x_i))+\frac{1}{N}KL(q_\theta(\omega)||p(\omega))$$
+$$\hat{L}_ {MC}(\theta) = -\frac{1}{M}\sum_{i\in{S}}logp(y_{i}|f^\omega(x_i))+\frac{1}{N}KL(q_\theta(\omega)||p(\omega))$$
 
 여기서 $N$은 데이터의 개수, $S$는 $M$개의 데이터를 갖는 random set, $f^\omega (x_i)$는 model output이다. KL divergence term은 regularisation을 위한 term으로, posterior가 prior distribution $p(\omega)$으로부터 너무 벗어나지 않도록 해준다. 이때 variational parameters의 set $\theta$이 dropout 분포에 대해 $\theta=\\{M_l,p_l\\}^L_{l=1}$을 만족한다고 가정하다. 이때 $M_l$은 mean weight matrix, $p_l$은 dropout 확률이며 아래와 같은 식을 만족한다. (여기서 $W_l$의 dimension은 $K_{l+1}\times K_l$이다.)
 
