@@ -28,7 +28,7 @@ image:
 
 Dropout 확률을 학습시키기 위해서는 dropout의 **variational interpretation**으로부터 출발해야한다. Dropout을 사용하면 $L$개의 layer를 가진 random weight matrices의 set $w={\{W_l\}}^L_{l=1}$와 variational parameters의 set $\theta$에 대해서, 분포 $q_\theta (\omega)$를 Bayesian NN의 posterior로 approximate 할 수 있다. 이때 최소화해야하는 objective function은 아래와 같다.
 
-$$\hat{L}_{MC}(\theta)=-\frac{1}{M}\sum_{i\in S}logp(y_i|f^\omega(x_i))+\frac{1}{N}KL(q_\theta(\omega)||p(\omega))$$
+$$\hat{L}_{MC}(\theta)=-\frac{1}{M}\sum_{i\in{S}}logp(y_i|f^\omega(x_i))+\frac{1}{N}KL(q_\theta(\omega)||p(\omega))$$
 
 여기서 $N$은 데이터의 개수, $S$는 $M$개의 데이터를 갖는 random set, $f^\omega (x_i)$는 model output이다. KL divergence term은 regularisation을 위한 term으로, posterior가 prior distribution $p(\omega)$으로부터 너무 벗어나지 않도록 해준다. 이때 variational parameters의 set $\theta$이 dropout 분포에 대해 $\theta={\{M_l,p_l\}}^L_{l=1}$을 만족한다고 가정하다. 이때 $M_l$은 mean weight matrix, $p_l$은 dropout 확률이며 아래와 같은 식을 만족한다. (여기서 $W_l$의 dimension은 $K_{l+1}\times K_l$이다.)
 
@@ -56,19 +56,21 @@ $$z=\sigma\left(\frac{1}{\tau}\cdot(logp-log(1-p)+logu-log(1-u))\right)$$
 
 이러한 discrete random variable에 대한 re-parameterization trick을 통해 $p$를 학습시킬 수 있다.
 
+<bn>
 ---
+<bn>
 
 이제 결과를 살펴보자. 먼저, synthetic data에 대한 분석이다. 데이터의 개수가 늘어남에 따라 epistemic uncertainty는 감소하며, aleatoric uncertainty는 이에 영향받지 않음을 확인할 수 있다. 또한, (d)에서 dropout probability가 데이터 개수가 증가함에 따라 hand-tune 했을 때와 같은 경향으로, 점차 0에 가까워지는 것을 확인할 수 있다.
 
-![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%200.png)
+![Untitled 0](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%200.png)
 
 MNIST benchmark에 대해서도 test를 하였는데, model size와 dataset size를 바꿔가며 각 layer 별 dropout parameter를 plot하였다. 데이터셋 크기가 커질수록 첫 두 layer의 $p$가 0으로 수렴하였으며, 이는 위 실험의 결과와 일치한다. 또한, 모델의 크기가 커질수록 epistemic uncertainty가 증가하며, 이에 따라 $p$ 또한 커지는 것을 확인할 수 있었다.
 
-![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%201.png)
+![Untitled 1](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%201.png)
 
 다음은 sementic segmentation task에서의 방법에 따른 모델 성능(Intersection over Union; IoU)을 비교하였다. MC sampling을 하지 않은 경우보다 한 경우 IoU가 더 높았으며, Concrete dropout을 사용한 모델이 $p$를 고정하였을 때 보다 조금 더 좋은 결과를 보여주었다. 또한, uncertainty calibration 면에서도 Concrete dropout 모델의 RMSE 값이 가장 낮았다. 
 
-![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%202.png)
+![Untitled 2](https://github.com/WonhoZhung/starter-academic/blob/master/images/post1/Untitled%202.png)
 
 마지막으로 multi-episode RL에서 Concrete dropout을 적용하여 episode가 진행됨에 따른 $p$와 epistemic uncertainty를 분석하였다. 점점 더 많은 데이터가 수집되면서, $p$가 점점 감소하는 것을 확인할 수 있었다. 또한, Cartpole example에서의 $x,\dot{x},\theta,\dot{\theta}$에 대한 epistemic uncertainty가 episode가 진행되면서 점차 감소하는 것을 확인할 수 있었다.
 
