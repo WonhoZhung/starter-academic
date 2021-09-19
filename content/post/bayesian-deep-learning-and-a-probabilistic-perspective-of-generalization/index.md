@@ -8,7 +8,7 @@ draft: false
 featured: false
 tags:
   - Paper Summary
-  - Bayesian
+  - Generalization
   - AI602
 image:
   filename: featured
