@@ -56,13 +56,13 @@ Ground truth로 10 chain의 Hamiltonian Monte Carlo (HMC) 알고리즘을 사용
 
 기존의 상식으로는, function class의 capacity가 커져감에 따라 처음에는 under-fitting이 해소되면서 test loss가 감소하다 어느 순간부터는 over-fitting으로 인해 다시 test loss가 증가하는, 아래 그림의 (a) 같은 상황을 생각한다. 하지만 modern regime은 **double decent curve**를 주장하는데, 이는 capacity의 특정 interpolation threshold를 넘어서면 다시 test risk가 감소한다는 것이다. 이는 기존 심층학습에서 이해할 수 없던 generalization 형태였는데, 본 논문에서의 support, inductive bias의 이차원적인 관점으로는 이를 설명할 수 있다고 주장한다.
 
-![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post2/Untitled%208.png?raw=true)
+![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post2/Untitled%207.png?raw=true)
 
 Image from Belkin et al. ([https://arxiv.org/pdf/1812.11118.pdf](https://arxiv.org/pdf/1812.11118.pdf))
 
 아래 그림의 SGD 모델 또한 double decent curve를 보여주고 있다. SWAG 모델은 중간의 test error (또는 NLL) 상승을 완화시켜주며, MultiSWAG 모델에서는 완전히 완화된 모습을 확인할 수 있었다. 또한, 아래 그림 (e)에서 SWAG 모델의 앙상블 개수가 증가함에 따라 점차 중간 피크가 사라지는 것을 확인할 수 있었다. 따라서, 여러 posterior를 marginalize 하는 것이 generalization에 중요함을 시사한다.
 
-![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post2/Untitled%209.png?raw=true)
+![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post2/Untitled%208.png?raw=true)
 
 ### 3. Opinion
 
