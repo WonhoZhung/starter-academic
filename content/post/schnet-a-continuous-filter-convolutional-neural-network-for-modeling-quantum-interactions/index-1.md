@@ -117,3 +117,5 @@ SchNet의 구조는 아래 그림과 같다. $n$개의 원자로 이루어진 �
 
 #### 5. Opinion
 본 논문에서는 continuous-filter generating function을 통해 거리 정보를 연속적인 벡터로 embedding하면서 3차원 분자 구조에 대한 정보를 효과적으로 분자 물성 예측에 활용하였다. 또한, 힘-에너지 관계식을 통해 모델이 에너지를 예측하는 동시에 주어진 구조의 각 원자에 미치는 힘을 맞추게 하여 분자의 conformation에 따른 PES를 학습하도록 한 점이 인상적이었다. 또한, convolution하는 과정에서 모든 원자에 대해 동등한 비율로 summation을 하는데, 중요도를 함께 학습하여 weighted-sum을 하면 효과적일 것으로 생각된다. 다만, loss를 구하는 과정에서 derivative를 구하는 과정이 많은 계산량을 요하며, 모델이 roto-translation에 invariant하여 equivariant한 벡터 예측에는 적용하기 어렵다는 단점이 있을 것으로 생각된다.
+
+$$***$$
