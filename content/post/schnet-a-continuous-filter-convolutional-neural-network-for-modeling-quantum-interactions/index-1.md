@@ -40,12 +40,12 @@ V. Opinion
 
 하지만 3D CNN을 분자에 사용하는데에는 크게 네 가지 문제가 있다. 첫 번째는, 격자 형태로 좌표를 나타내게 되면 위치의 분포가 불연속적이게 된다는 것이다. 격자의 간격을 좁히면 보다 높은 해상도로 분자를 표현할 수 있겠지만, 사용되는 표현법의 크기는 $O(n^3)$으로 해상도를 높이는 데에는 한계가 있다. 두 번째는, 모델이 input의 크기에 대해 scalable하지 않다. 이는, 학습할 때 사용한 격자의 전체 크기를 초과하는 분자는 예측의 input으로 사용할 수 없음을 의미한다. 또한, 3D CNN은 rotation에 대해 equivariant하지 않다. Equivariance에 관한 내용은 [TBD, egnn paper?]를 참고하자. 이는 주어진 분자의 좌표가 공간상에서 회전하게 되면 원자들의 상대적인 위치는 같더라도 모델이 다른 결과를 예측하게 한다. 마지막으로, 분자를 격자로 나타내면 분자내의 결합(bonding)에 관한 정보를 포함할 수 없다. 
 
-또 다른 표현법으로는 그래프(**graph**)를 사용할 수 있다. 그래프 $G = (V, E)$는 node $v_i\in V$와 edge $e_{ij}\in E$로 이루어져있으며, 분자에서 node는 원자, edge는 원자간 결합 또는 상호작용을 의미한다. 원자 사이의 거리 $d_{ij}=\Vert\bold{r}_i-\bold{r}_j\Vert_2$를 edge 정보로 활용(거리를 일정 간격으로 나누어 one-hot vector로 만들 수 있다)하면 분자의 3차원 정보를 담을 수 있다. 이렇게 표현된 분자 그래프는 graph neural network(GNN)을 통해 물성을 예측할 수 있다. 그래프 표현법의 장점은 roto-translation에 대해 equivariant하며, 원자들 사이의 pairwise feature(거리, 결합 정보 등)를 모델 학습에 제공해 줄 수 있다는 것이다. 다만, 앞서 3D CNN의 문제점으로 이야기한 거리의 불연속적인 표현은 여전히 해결되어야 할 문제이다.
+또 다른 표현법으로는 그래프(**graph**)를 사용할 수 있다. 그래프 $G = (V, E)$는 node $v_i\in V$와 edge $e_{ij}\in E$로 이루어져있으며, 분자에서 node는 원자, edge는 원자간 결합 또는 상호작용을 의미한다. 원자 사이의 거리 $d_{ij}=\Vert\mathbf{r}_i-\mathbf{r}_j\Vert_2$를 edge 정보로 활용(거리를 일정 간격으로 나누어 one-hot vector로 만들 수 있다)하면 분자의 3차원 정보를 담을 수 있다. 이렇게 표현된 분자 그래프는 graph neural network(GNN)을 통해 물성을 예측할 수 있다. 그래프 표현법의 장점은 roto-translation에 대해 equivariant하며, 원자들 사이의 pairwise feature(거리, 결합 정보 등)를 모델 학습에 제공해 줄 수 있다는 것이다. 다만, 앞서 3D CNN의 문제점으로 이야기한 거리의 불연속적인 표현은 여전히 해결되어야 할 문제이다.
 
 #### II. Key contributions
-1. 본 논문에서, 거리를 one-hot vector로 표현했을 때 불연속적으로 표현되는 것을 해결하기 위해 radial basis function을 이용해 거리를 연속적으로 표현하였다. 아래 식에서 $\mu_k$는 중앙값으로 $0Å\leq\mu_k\leq30Å$ 을 $0.1Å$ 간격으로 사용하였다. $\gamma=10Å$를 사용하였다.
+1. 본 논문에서, 거리를 one-hot vector로 표현했을 때 불연속적으로 표현되는 것을 해결하기 위해 radial basis function을 이용해 거리를 연속적으로 표현하였다. 아래 식에서 $\mu_k$는 중앙값으로 $0Å\leq\mu_k\leq30Å$ 을 $0.1Å$ 간격으로 사용하였다. $\gamma$의 값으로 $10Å$을 사용하였다.
 
-    $$e_k(\bold{r}_i-\bold{r}_j)=exp(-\gamma\Vert d_{ij}-\mu_k\Vert^2)$$
+$$e_k(\mathbf{r}_i-\mathbf{r}_j)=exp(-\gamma\Vert d_{ij}-\mu_k\Vert^2)$$
 
     이러한 continuous-filter를 통해 아래 그림과 같이 분자 구조의 연속적인 표현을 가능하게 해준다.
 
@@ -53,7 +53,7 @@ V. Opinion
 
 2. 본 논문에서는 *SchNet*을 소개하며, input으로 원자의 3차원 좌표인 $\bold{r}_i \in \mathbb{R}^3$를 사용한다. 에너지의 위치에 대한 gradient는 힘이라는 사실을 loss로 사용하여 energy-conserving force model을 설계하였다.
 
-    $$\bold{F}_i(\bold{r}_1,...,\bold{r}_n)=-\frac{\partial E}{\partial {\bold{r}_i}}(\bold{r}_1,...,\bold{r}_i)$$
+$$\mathbf{F}_i(\mathbf{r}_1,...,\mathbf{r}_n)=-\frac{\partial E}{\partial {\mathbf{r}_i}}(\mathbf{r}_1,...,\mathbf{r}_i)$$
 
 3. ISO17이라는 새로운 벤치마크 데이터셋을 제공한다. $C_7O_2H_{10}$의 분자식을 갖는 129개의 isomer들의 MD trajectory 각 5,000개를 담은 이 데이터셋은, PES 상의 local minima에 있는 분자들로 모델을 학습했을 때 *non-equilibrium conformer*에 대해 얼마나 에너지를 정확하게 예측하는지 모델의 generalization을 평가할 수 있게 해준다. 
 
