@@ -45,7 +45,7 @@ V. Opinion
 #### II. Key contributions
 1. 본 논문에서, 거리를 one-hot vector로 표현했을 때 불연속적으로 표현되는 것을 해결하기 위해 radial basis function을 이용해 거리를 연속적으로 표현하였다. 아래 식에서 $\mu_k$는 중앙값으로 $0Å\leq\mu_k\leq30Å$ 을 $0.1Å$ 간격으로 사용하였다. $\gamma$의 값으로 $10Å$을 사용하였다. 이러한 continuous-filter를 통해 아래 그림과 같이 분자 구조의 연속적인 표현을 가능하게 해준다.
 
-$$e_k(\mathbf{r}_i-\mathbf{r}_j)=exp(-\gamma\Vert d_{ij}-\mu_k\Vert^2)$$
+$$e_ k(\mathbf{r}_ i-\mathbf{r}_ j)=exp(-\gamma\Vert d_ {ij}-\mu_ k\Vert^2)$$
 
     
 ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post3/Untitled%200.png?raw=true)
