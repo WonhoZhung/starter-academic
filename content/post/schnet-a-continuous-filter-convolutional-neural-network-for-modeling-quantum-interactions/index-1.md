@@ -43,30 +43,29 @@ V. Opinion
 또 다른 표현법으로는 그래프(**graph**)를 사용할 수 있다. 그래프 $G = (V, E)$는 node $v_i\in V$와 edge $e_{ij}\in E$로 이루어져있으며, 분자에서 node는 원자, edge는 원자간 결합 또는 상호작용을 의미한다. 원자 사이의 거리 $d_{ij}=\Vert\mathbf{r}_i-\mathbf{r}_j\Vert_2$를 edge 정보로 활용(거리를 일정 간격으로 나누어 one-hot vector로 만들 수 있다)하면 분자의 3차원 정보를 담을 수 있다. 이렇게 표현된 분자 그래프는 graph neural network(GNN)을 통해 물성을 예측할 수 있다. 그래프 표현법의 장점은 roto-translation에 대해 equivariant하며, 원자들 사이의 pairwise feature(거리, 결합 정보 등)를 모델 학습에 제공해 줄 수 있다는 것이다. 다만, 앞서 3D CNN의 문제점으로 이야기한 거리의 불연속적인 표현은 여전히 해결되어야 할 문제이다.
 
 #### II. Key contributions
-1. 본 논문에서, 거리를 one-hot vector로 표현했을 때 불연속적으로 표현되는 것을 해결하기 위해 radial basis function을 이용해 거리를 연속적으로 표현하였다. 아래 식에서 $\mu_k$는 중앙값으로 $0Å\leq\mu_k\leq30Å$ 을 $0.1Å$ 간격으로 사용하였다. $\gamma$의 값으로 $10Å$을 사용하였다.
+1. 본 논문에서, 거리를 one-hot vector로 표현했을 때 불연속적으로 표현되는 것을 해결하기 위해 radial basis function을 이용해 거리를 연속적으로 표현하였다. 아래 식에서 $\mu_k$는 중앙값으로 $0Å\leq\mu_k\leq30Å$ 을 $0.1Å$ 간격으로 사용하였다. $\gamma$의 값으로 $10Å$을 사용하였다. 이러한 continuous-filter를 통해 아래 그림과 같이 분자 구조의 연속적인 표현을 가능하게 해준다.
 
 $$e_k(\mathbf{r}_i-\mathbf{r}_j)=exp(-\gamma\Vert d_{ij}-\mu_k\Vert^2)$$
 
-    이러한 continuous-filter를 통해 아래 그림과 같이 분자 구조의 연속적인 표현을 가능하게 해준다.
-
+    
 ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post3/Untitled%200.png?raw=true)
 
-2. 본 논문에서는 *SchNet*을 소개하며, input으로 원자의 3차원 좌표인 $\bold{r}_i \in \mathbb{R}^3$를 사용한다. 에너지의 위치에 대한 gradient는 힘이라는 사실을 loss로 사용하여 energy-conserving force model을 설계하였다.
+2. 본 논문에서는 *SchNet*을 소개하며, input으로 원자의 3차원 좌표인 $\mathbf{r}_i \in \mathbb{R}^3$를 사용한다. 에너지의 위치에 대한 gradient는 힘이라는 사실을 loss로 사용하여 energy-conserving force model을 설계하였다.
 
 $$\mathbf{F}_i(\mathbf{r}_1,...,\mathbf{r}_n)=-\frac{\partial E}{\partial {\mathbf{r}_i}}(\mathbf{r}_1,...,\mathbf{r}_i)$$
 
 3. ISO17이라는 새로운 벤치마크 데이터셋을 제공한다. $C_7O_2H_{10}$의 분자식을 갖는 129개의 isomer들의 MD trajectory 각 5,000개를 담은 이 데이터셋은, PES 상의 local minima에 있는 분자들로 모델을 학습했을 때 *non-equilibrium conformer*에 대해 얼마나 에너지를 정확하게 예측하는지 모델의 generalization을 평가할 수 있게 해준다. 
 
 #### III. Proposed architecture of _SchNet_
-SchNet의 구조는 아래 그림과 같다. $n$개의 원자로 이루어진 분자에서, 각 원자의 전하량 $Z=(Z_1,...,Z_n)$과 각 원자의 위치 $R=(\bold{r}_1,...,\bold{r}_n)$를 모델의 input으로 사용한다. $Z$는 embedding layer를 통해 feature vector $\bold{x}^l_i\in \mathbb{R}^F$의 집합 $X^l=(\bold{x}^l_1,...,\bold{x}^l_n)$로 embedding 된다. 
+SchNet의 구조는 아래 그림과 같다. $n$개의 원자로 이루어진 분자에서, 각 원자의 전하량 $Z=(Z_1,...,Z_n)$과 각 원자의 위치 $R=(\mathbf{r}_1,...,\mathbf{r}_n)$를 모델의 input으로 사용한다. $Z$는 embedding layer를 통해 feature vector $\mathbf{x}^l_i\in \mathbb{R}^F$의 집합 $X^l=(\mathbf{x}^l_1,...,\mathbf{x}^l_n)$로 embedding 된다. 
 
 ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post3/Untitled%201.png?raw=true)
 
 1. Continuous-filter Convolutional (*cfconv*) layer
 
-    $R$로부터 계산한 $d_{ij}=\Vert\bold{r}_i-\bold{r}_j\Vert$를 위에서 소개한 식과 같이 RBF로 expand 한다. 아래 식에서의 $W^l$이 filter-generating 함수이다. 이를 $X^l$와 elemet-wise product하여 다음 layer의 feature vector를 얻는다.
+    $R$로부터 계산한 $d_{ij}=\Vert\mathbf{r}_i-\mathbf{r}_j\Vert$를 위에서 소개한 식과 같이 RBF로 expand 한다. 아래 식에서의 $W^l$이 filter-generating 함수이다. 이를 $X^l$와 elemet-wise product하여 다음 layer의 feature vector를 얻는다.
 
-    $$\bold{x}_i^{l+1}=(X^l*W^l)_i=\sum_j\bold{x}^l_j\circ W^l(\bold{r}_i-\bold{r}_j),W^l:\mathbb{R}^3\to\mathbb{R}^F$$
+    $$\mathbf{x}_i^{l+1}=(X^l*W^l)_i=\sum_j\mathbf{x}^l_j\circ W^l(\mathbf{r}_i-\mathbf{r}_j),W^l:\mathbb{R}^3\to\mathbb{R}^F$$
 
     여기서 activation function으로 shifted softplus 함수를 사용하였는데, 이때 $ssp(0)=0$이며 무한 번 미분 가능하다는 성질을 가지고 있다.
 
@@ -74,17 +73,17 @@ SchNet의 구조는 아래 그림과 같다. $n$개의 원자로 이루어진 �
 
 2. Interaction Blocks
 
-    SchNet은 총 3개의 interaction block을 사용하였다. 기본적으로 residual connection 구조로 되어있는 interaction block은 cfconv layer를 통해 얻은 $V^l=(\bold{v}_1^l,...,\bold{v}_n^l)$을 $X^l$와 합하여 다음 layer의 feature vector를 얻는다. 여기서 atom-wise layer는 feature dimension에서의 linear layer이다.
+    SchNet은 총 3개의 interaction block을 사용하였다. 기본적으로 residual connection 구조로 되어있는 interaction block은 cfconv layer를 통해 얻은 $V^l=(\mathbf{v}_1^l,...,\mathbf{v}_n^l)$을 $X^l$와 합하여 다음 layer의 feature vector를 얻는다. 여기서 atom-wise layer는 feature dimension에서의 linear layer이다.
 
 3. Loss Function
 
-    모델이 예측한 에너지 $\hat{E}$를 각 원자의 위치 $\bold{r}_i$에 대해 미분하면 각 원자에 작용하는 힘 $\hat{\bold{F}}_i$을 구할 수 있다.
+    모델이 예측한 에너지 $\hat{E}$를 각 원자의 위치 $\mathbf{r}_i$에 대해 미분하면 각 원자에 작용하는 힘 $\hat{\mathbf{F}}_i$을 구할 수 있다.
 
-    $$\hat{\bold{F}}_i(Z_1,...,Z_n,\bold{r}_1,...,\bold{r}_n)=-\frac{\partial\hat{E}}{\partial {\bold{r}_i}}(Z_1,...,Z_n,\bold{r}_1,...,\bold{r}_i)$$
+    $$\hat{\mathbf{F}}_i(Z_1,...,Z_n,\mathbf{r}_1,...,\mathbf{r}_n)=-\frac{\partial\hat{E}}{\partial {\mathbf{r}_i}}(Z_1,...,Z_n,\mathbf{r}_1,...,\mathbf{r}_i)$$
 
-    이를 loss function에 추가하여 실제 힘이 label로 주어졌을 때 보다 정확한 PES $\hat{E}(\bold{r}_1,...,\bold{r}_n)$를 예측할 수 있도록 해주었다. 여기서 $\rho=0.01$을 사용하였다. 
+    이를 loss function에 추가하여 실제 힘이 label로 주어졌을 때 보다 정확한 PES $\hat{E}(\mathbf{r}_1,...,\mathbf{r}_n)$를 예측할 수 있도록 해주었다. 여기서 $\rho=0.01$을 사용하였다. 
 
-    $$l(\hat{E},(E,\bold{F}_1,...,\bold{F}_n))=\rho\Vert E-\hat{E}\Vert^2+\frac{1}{n}\sum_{i=0}^{n}\left\Vert\bold{F}_i-\left(-\frac{\partial\hat{E}}{\partial{\bold{r}_i}}\right)\right\Vert^2$$
+    $$l(\hat{E},(E,\mathbf{F}_1,...,\mathbf{F}_n))=\rho\Vert E-\hat{E}\Vert^2+\frac{1}{n}\sum_{i=0}^{n}\left\Vert\mathbf{F}_i-\left(-\frac{\partial\hat{E}}{\partial{\mathbf{r}_i}}\right)\right\Vert^2$$
 
 #### IV. Remarks from the experiments
 
@@ -92,7 +91,7 @@ SchNet의 구조는 아래 그림과 같다. $n$개의 원자로 이루어진 �
 
 1. QM9
 
-    QM9은 C, N, O, F로 이루어진 약 13만개의 분자들의 equilibrium 구조를 가지고 있다. 정의에 의해 $\bold{F}=0$으로 놓고 학습하였다. 에너지 예측에서 SchNet이 다른 모델에 비해 더 낮은 MAE를 보여주며 state-of-the-art performance를 기록하였다. 
+    QM9은 C, N, O, F로 이루어진 약 13만개의 분자들의 equilibrium 구조를 가지고 있다. 정의에 의해 $\mathbf{F}=0$으로 놓고 학습하였다. 에너지 예측에서 SchNet이 다른 모델에 비해 더 낮은 MAE를 보여주며 state-of-the-art performance를 기록하였다. 
 
 ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post3/Untitled%202.png?raw=true)
 
