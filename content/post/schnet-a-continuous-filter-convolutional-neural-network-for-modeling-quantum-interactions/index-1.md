@@ -85,7 +85,7 @@ SchNet의 구조는 아래 그림과 같다. $n$개의 원자로 이루어진 �
 
     이를 loss function에 추가하여 실제 힘이 label로 주어졌을 때 보다 정확한 PES $\hat{E}(\mathbf{r}_1,...,\mathbf{r}_n)$를 예측할 수 있도록 해주었다. 여기서 $\rho=0.01$을 사용하였다. 
 
-    $$l(\hat{E},(E,\mathbf{F}_1,...,\mathbf{F}_n))=\rho\Vert E-\hat{E}\Vert^2+\frac{1}{n}\sum_{i=0}^{n}\left\Vert\mathbf{F}_i-\left(-\frac{\partial\hat{E}}{\partial{\mathbf{r}_i}}\right)\right\Vert^2$$
+    $$l(\hat{E},(E,\mathbf{F}_ 1,...,\mathbf{F}_ n))=\rho\Vert E-\hat{E}\Vert^2+\frac{1}{n}\sum_ {i=0}^{n}\left\Vert\mathbf{F}_ i-\left(-\frac{\partial\hat{E}}{\partial{\mathbf{r}_ i}}\right)\right\Vert^2$$
 
 <br>
 #### IV. Remarks from the experiments
