@@ -42,10 +42,11 @@ V. Opinion
 
 또 다른 표현법으로는 그래프(**graph**)를 사용할 수 있다. 그래프 $G = (V, E)$는 node $v_i\in V$와 edge $e_{ij}\in E$로 이루어져있으며, 분자에서 node는 원자, edge는 원자간 결합 또는 상호작용을 의미한다. 원자 사이의 거리 $d_{ij}=\Vert\mathbf{r}_i-\mathbf{r}_j\Vert_2$를 edge 정보로 활용(거리를 일정 간격으로 나누어 one-hot vector로 만들 수 있다)하면 분자의 3차원 정보를 담을 수 있다. 이렇게 표현된 분자 그래프는 graph neural network(GNN)을 통해 물성을 예측할 수 있다. 그래프 표현법의 장점은 roto-translation에 대해 equivariant하며, 원자들 사이의 pairwise feature(거리, 결합 정보 등)를 모델 학습에 제공해 줄 수 있다는 것이다. 다만, 앞서 3D CNN의 문제점으로 이야기한 거리의 불연속적인 표현은 여전히 해결되어야 할 문제이다.
 
+<br>
 #### II. Key contributions
 1. 본 논문에서, 거리를 one-hot vector로 표현했을 때 불연속적으로 표현되는 것을 해결하기 위해 radial basis function을 이용해 거리를 연속적으로 표현하였다. 아래 식에서 $\mu_k$는 중앙값으로 $0Å\leq\mu_k\leq30Å$ 을 $0.1Å$ 간격으로 사용하였다. $\gamma$의 값으로 $10Å$을 사용하였다. 이러한 continuous-filter를 통해 아래 그림과 같이 분자 구조의 연속적인 표현을 가능하게 해준다.
 
-$$e_ k(\mathbf{r}_ i-\mathbf{r}_ j)=exp(-\gamma\Vert d_ {ij}-\mu_ k\Vert^2)$$
+    $$e_ k(\mathbf{r}_ i-\mathbf{r}_ j)=exp(-\gamma\Vert d_ {ij}-\mu_ k\Vert^2)$$
 
     
 ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post3/Untitled%200.png?raw=true)
@@ -56,6 +57,7 @@ $$\mathbf{F}_i(\mathbf{r}_1,...,\mathbf{r}_n)=-\frac{\partial E}{\partial {\math
 
 3. ISO17이라는 새로운 벤치마크 데이터셋을 제공한다. $C_7O_2H_{10}$의 분자식을 갖는 129개의 isomer들의 MD trajectory 각 5,000개를 담은 이 데이터셋은, PES 상의 local minima에 있는 분자들로 모델을 학습했을 때 *non-equilibrium conformer*에 대해 얼마나 에너지를 정확하게 예측하는지 모델의 generalization을 평가할 수 있게 해준다. 
 
+<br>
 #### III. Proposed architecture of _SchNet_
 SchNet의 구조는 아래 그림과 같다. $n$개의 원자로 이루어진 분자에서, 각 원자의 전하량 $Z=(Z_1,...,Z_n)$과 각 원자의 위치 $R=(\mathbf{r}_1,...,\mathbf{r}_n)$를 모델의 input으로 사용한다. $Z$는 embedding layer를 통해 feature vector $\mathbf{x}^l_i\in \mathbb{R}^F$의 집합 $X^l=(\mathbf{x}^l_1,...,\mathbf{x}^l_n)$로 embedding 된다. 
 
@@ -85,6 +87,7 @@ SchNet의 구조는 아래 그림과 같다. $n$개의 원자로 이루어진 �
 
     $$l(\hat{E},(E,\mathbf{F}_1,...,\mathbf{F}_n))=\rho\Vert E-\hat{E}\Vert^2+\frac{1}{n}\sum_{i=0}^{n}\left\Vert\mathbf{F}_i-\left(-\frac{\partial\hat{E}}{\partial{\mathbf{r}_i}}\right)\right\Vert^2$$
 
+<br>
 #### IV. Remarks from the experiments
 
 본 논문에서는 세 가지 데이터셋으로 모델을 평가하였다.
@@ -107,5 +110,6 @@ SchNet의 구조는 아래 그림과 같다. $n$개의 원자로 이루어진 �
 
 ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post3/Untitled%204.png?raw=true)
 
+<br>
 #### 5. Opinion
 본 논문에서는 continuous-filter generating function을 통해 거리 정보를 연속적인 벡터로 embedding하면서 3차원 분자 구조에 대한 정보를 효과적으로 분자 물성 예측에 활용하였다. 또한, 힘-에너지 관계식을 통해 모델이 에너지를 예측하는 동시에 주어진 구조의 각 원자에 미치는 힘을 맞추게 하여 분자의 conformation에 따른 PES를 학습하도록 한 점이 인상적이었다. 또한, convolution하는 과정에서 모든 원자에 대해 동등한 비율로 summation을 하는데, 중요도를 함께 학습하여 weighted-sum을 하면 효과적일 것으로 생각된다. 다만, loss를 구하는 과정에서 derivative를 구하는 과정이 많은 계산량을 요하며, 모델이 roto-translation에 invariant하여 equivariant한 벡터 예측에는 적용하기 어렵다는 단점이 있을 것으로 생각된다.
