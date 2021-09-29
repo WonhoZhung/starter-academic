@@ -4,7 +4,7 @@ title: "SchNet: A Continuous-filter convolutional neural network for modeling
 date: 2021-09-20T12:33:14.748Z
 summary: 'This post is based on a paper "SchNet: A Continuous-filter
   convolutional neural network for modeling quantum interactions" by Kristof T.
-  Schütt, Klaus-Robert Müller at NIPS 2017.'
+  Schütt, Klaus-Robert Müller at NeurIPS 2017.'
 draft: false
 featured: false
 tags:
