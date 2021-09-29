@@ -22,7 +22,8 @@ image:
     
 **Variational auto-encoder (VAE)**는 Fig 1.와 같이 주어진 데이터를 latent vector space로 압축했다가 다시 reconstruct하는 auto-encoder의 구조를 가지고 있지만, latent vector $z$가 deterministic하게 결정되는 것이 아니라 variational inferencing을 통해 정해진 distribution $q_\phi (z|x)$으로 부터 sampling 된다는 특징을 가진다. VAE의 objective function은 아래의 식 (1)과 같으며, 전자의 **reconstruction** **loss**와 후자의 **KL regularization loss**로 이루어져 있다.
     
- $$\tag{1} \mathcal{L}_{VAE}(\theta,\phi)=-\mathbb{E}_{z\sim q_\phi (z|x)}[logp_\theta (x|z)]+KL(q_\phi (z|x)\Vert p_\theta (z))$$
+ 
+$$\tag{1} \mathcal{L}_ {VAE}(\theta,\phi)=-\mathbb{E}_ {z\sim q_ \phi (z|x)}[logp_ \theta (x|z)]+KL(q_ \phi (z|x)\Vert p_ \theta (z))$$
     
  VAE는 latent vector를 이용한 interpolation이나 conditioning이 가능하다는 단점이 있지만, Fig 2.와 같이 GAN에 비해서 blurry한 이미지를 생성한다는 단점이 있다. 이는 posterior의 분포를 Gaussian으로 가정하면서 동시에 L2 loss를 감소하는 방향으로 학습을 진행하여 발생하는 문제이다.
     
