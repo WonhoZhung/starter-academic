@@ -2,8 +2,8 @@
 title: Bayesian Deep Learning and a Probabilistic Perspective of Generalization
 date: 2021-09-19T14:47:13.246Z
 summary: This post is based on a paper "Bayesian Deep Learning and a
-  Probabilistic Perspective of Generalization" by Andrew Gordon Wilson  and
-  Pavel Izmailov at NIPS 2020.
+  Probabilistic Perspective of Generalization" by Andrew Gordon Wilson and Pavel
+  Izmailov at NeurIPS 2020.
 draft: false
 featured: false
 tags:
