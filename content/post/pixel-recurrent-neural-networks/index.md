@@ -34,7 +34,7 @@ $$\tag{2}p(x_i|\mathbf{x}_{<i})=p(x_{i,R}|\mathbf{x}_{<i})p(x_{i,G}|\mathbf{x}_{
     
  이러한 conditional distribution을 예측할 때, 멀리 있는 픽셀들 사이의 long-range correlation과 같은 복잡한 분포를 표현할 수 있어야 하므로 적절한 architecture가 필요하다. 본 논문에서는 recurrent neural networks (RNN)을 사용하였는데, 특히 two-dimensional long short-term memory (**LSTM**) layer를 사용하여 모델을 구현하였다. 추가적으로, 깊게 LSTM layer를 쌓기 위해 residual connection을 사용하였다.
     
- 또한, 연속적인 분포를 사용한 기존 연구들과 다르게 각 conditional distribution을 [0, 255]의 256개의 값에 대한 불연속적인 분포로 나타내었다. 생성 과정 동안 softmax를 거쳐 만들어진 multinomial distribution에서 sampling하여 순차적인 픽셀 생성이 이루어진다.
+ 또한, 연속적인 분포를 사용한 기존 연구들과 다르게 각 conditional distribution을 $[0, 255]$의 256개의 값에 대한 불연속적인 분포로 나타내었다. 생성 과정 동안 softmax를 거쳐 만들어진 multinomial distribution에서 sampling하여 순차적인 픽셀 생성이 이루어진다.
     
 
 ---                       
