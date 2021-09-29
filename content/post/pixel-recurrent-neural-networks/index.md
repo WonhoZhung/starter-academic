@@ -30,7 +30,7 @@ image:
     
  또한, 각 픽셀은 Red, Green, Blue의 세 개의 채널 값을 가지고 있는데 이 값들 또한 factorizing하여 아래와 같이 표현할 수 있다.
            
-$$\tag{2}p(x_ i|\mathbf{x}_ {<i})=p(x_ {i,R}|\mathbf{x}_ {<i})p(x_ {i,G}|\mathbf{x}_ {<i},x_ {i,R})p(x_ {i,B}|\mathbf{x}_ {<i},x_ {i,R},x_ {i,G})$$
+$$\tag{2}p(x_ {i,R}|\mathbf{x}_ {<i})p(x_ {i,G}|\mathbf{x}_ {<i},x_ {i,R})p(x_ {i,B}|\mathbf{x}_ {<i},x_ {i,R},x_ {i,G})$$
     
  이러한 conditional distribution을 예측할 때, 멀리 있는 픽셀들 사이의 long-range correlation과 같은 복잡한 분포를 표현할 수 있어야 하므로 적절한 architecture가 필요하다. 본 논문에서는 recurrent neural networks (RNN)을 사용하였는데, 특히 two-dimensional long short-term memory (**LSTM**) layer를 사용하여 모델을 구현하였다. 추가적으로, 깊게 LSTM layer를 쌓기 위해 residual connection을 사용하였다.
     
