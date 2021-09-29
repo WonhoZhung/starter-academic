@@ -20,7 +20,7 @@ image:
 
 > "In this paper, we aim to *make VAEs great again* by architecture design." 
 
-**Variational auto-encoder (VAE)**는 Fig 1.와 같이 주어진 데이터를 latent vector space로 압축했다가 다시 reconstruct하는 auto-encoder의 구조를 가지고 있지만, latent vector $z$가 deterministic하게 결정되는 것이 아니라 variational inferencing을 통해 정해진 distribution $q_\phi (z|x)$으로 부터 sampling 된다는 특징을 가진다. VAE의 objective function은 아래의 식 (1)과 같으며, 전자의 **reconstruction loss**와 후자의 **KL regularization loss**로 이루어져 있다. 
+**Variational auto-encoder (VAE)**는 Fig 1.와 같이 주어진 데이터를 latent vector space로 압축했다가 다시 reconstruct하는 auto-encoder의 구조를 가지고 있지만, latent vector $z$가 deterministic하게 결정되는 것이 아니라 variational inferencing을 통해 정해진 distribution $q_ \phi (z|x)$으로 부터 sampling 된다는 특징을 가진다. VAE의 objective function은 아래의 식 (1)과 같으며, 전자의 **reconstruction loss**와 후자의 **KL regularization loss**로 이루어져 있다. 
  
 $$\tag{1} \mathcal{L}_ {VAE}(\theta,\phi)=-\mathbb{E}_ {z\sim q_ \phi (z|x)}[logp_ \theta (x|z)]+KL(q_ \phi (z|x)\Vert p_ \theta (z))$$
     
