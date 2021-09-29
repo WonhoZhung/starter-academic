@@ -21,14 +21,11 @@ image:
 
 > "From this probabilistic perspective, it is crucial not to conflate the *flexibility* of a model with the *complexity* of a model class."
 
-고전적으로 파라미터의 수가 많으면 모델이 데이터셋에 overfit 될 수 있으며 이는 **generalization**의 감소로 이어질 수 있다고 생각되어왔다. 하지만 Gaussian process와 같이 non-parametric한 방법
-은 무한히 많은 파라미터를 사용하는 것과 같지만 여전히 넓은 범위의 데이터에 대하여 좋은 모델 유연성(**flexibility**)을 보여준다.
+고전적으로 파라미터의 수가 많으면 모델이 데이터셋에 overfit 될 수 있으며 이는 **generalization**의 감소로 이어질 수 있다고 생각되어왔다. 하지만 Gaussian process와 같이 non-parametric한 방법은 무한히 많은 파라미터를 사용하는 것과 같지만 여전히 넓은 범위의 데이터에 대하여 좋은 모델 유연성(**flexibility**)을 보여준다.
 
-이 논문에서는 모델의 generalization을 probabilistic 관점에서 크게 두 가지에 의존한다고 이야기한다. 첫 번째는 **support**로, evidence > 0인 데이터셋의 범위, 즉 모델의 expressive power를 이야
-기한다. 선형 모델의 경우 support는 매우 한정적이지만, NN과 같이 아주 많은 파라미터를 사용할 경우 support는 넓어지게 된다.
+이 논문에서는 모델의 generalization을 probabilistic 관점에서 크게 두 가지에 의존한다고 이야기한다. 첫 번째는 **support**로, evidence > 0인 데이터셋의 범위, 즉 모델의 expressive power를 이야기한다. 선형 모델의 경우 support는 매우 한정적이지만, NN과 같이 아주 많은 파라미터를 사용할 경우 support는 넓어지게 된다.
 
-두 번째는 **inductive bias**로, support의 분포, 즉 다른 데이터셋에 대해 모델이 얼마나 다른 prior probability를 갖는지를 이야기한다. 예를 들어, CIFAR-10과 corrupted CIFAR-10 데이터셋이 있을 때, MLP 모델과 CNN 모델을 비교해보자. 두 모델 모두 넓은 support를 가지고 있지만, MLP 모델에 비해 CNN 모델이 주어진 데이터에 대한 합당한 inductive bias를 가지고 있어서 두 데이터셋을 구분해낼
- 수 있다. 이러한 관점에서, 모델의 generalization이라는 것은 단순한 모델 complexity 만의 문제가 아닌, support와 inductive bias를 모두 고려해야 한다.
+두 번째는 **inductive bias**로, support의 분포, 즉 다른 데이터셋에 대해 모델이 얼마나 다른 prior probability를 갖는지를 이야기한다. 예를 들어, CIFAR-10과 corrupted CIFAR-10 데이터셋이 있을 때, MLP 모델과 CNN 모델을 비교해보자. 두 모델 모두 넓은 support를 가지고 있지만, MLP 모델에 비해 CNN 모델이 주어진 데이터에 대한 합당한 inductive bias를 가지고 있어서 두 데이터셋을 구분해낼 수 있다. 이러한 관점에서, 모델의 generalization이라는 것은 단순한 모델 complexity 만의 문제가 아닌, support와 inductive bias를 모두 고려해야 한다.
 
 ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post2/Untitled%204.png?raw=true)
 
