@@ -27,7 +27,7 @@ tags:
   - Deep Learning
 projects: []
 slides: ""
-url_pdf: https://arxiv.org/pdf/2008.12249.pdf
+url_pdf: https://pubs.rsc.org/en/content/articlepdf/2022/sc/d1sc06946b
 publication_types:
   - "2"
 url_dataset: ""
@@ -49,7 +49,7 @@ date: 2020-08-22T00:00:00Z
 url_slides: ""
 title: "PIGNet: A physics-informed deep learning model toward generalized
   drug-target interaction predictions"
-publishDate: 2020-08-22T00:00:00Z
+publishDate: 2022-02-06T00:00:00Z
 url_poster: ""
 url_code: ""
 doi: 10.1039/d1sc06946b
