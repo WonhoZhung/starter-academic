@@ -21,13 +21,23 @@ date_format: Jan 2006
 #   Required fields are `title`, `company`, and `date_start`.
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
-experience:                                                                       
+experience:                   
   - title: Research Project                                               
     company: Intelligent Chemistry Lab (ICL)                                      
-    company_url: 'https://aceteamkaist.wixsite.com/home'                          
+    company_url: 'https://wooyoun.kaist.ac.kr'                          
+    location: Dept. of Chemistry, KAIST, Republic of Korea                        
+    date_start: '2021-12-01'                                                      
+    date_end: ''                                                        
+    description: |2-                                                              
+        Spatially Constrained 3D Scaffold-based Molecular Generative Modeling Toward a Controllable Drug Design.  
+        (Supervised by Prof. Wooyoun Kim, Dept. of Chemistry, KAIST)   
+        
+  - title: Research Project                                               
+    company: Intelligent Chemistry Lab (ICL)                                      
+    company_url: 'https://wooyoun.kaist.ac.kr'                          
     location: Dept. of Chemistry, KAIST, Republic of Korea                        
     date_start: '2019-12-01'                                                      
-    date_end: ''                                                        
+    date_end: '2022-02-06'                                                        
     description: |2-                                                              
         Physically Informed Graph Neural Network for Predicting Drug-target Interaction.  
         (Supervised by Prof. Wooyoun Kim, Dept. of Chemistry, KAIST)              
