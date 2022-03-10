@@ -4,7 +4,7 @@ authors:
   - Seokhyun Moon
   - Soojung Yang
   - Jaechang Lim
-  - Wooyoun Kim
+  - Woo Youn Kim
 abstract: Recently, deep neural network (DNN)-based drug–target interaction
   (DTI) models were highlighted for their high accuracy with affordable
   computational costs. Yet, the models' insufficient generalization remains a
@@ -42,7 +42,7 @@ author_notes:
 publication: Chemical Science
 featured: false
 image:
-  caption: "Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)"
+  caption: ""
   focal_point: ""
   preview_only: false
 date: 2022-02-06T00:00:00Z
