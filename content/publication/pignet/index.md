@@ -45,7 +45,7 @@ image:
   caption: "Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)"
   focal_point: ""
   preview_only: false
-date: 2020-08-22T00:00:00Z
+date: 2022-02-06T00:00:00Z
 url_slides: ""
 title: "PIGNet: A physics-informed deep learning model toward generalized
   drug-target interaction predictions"
