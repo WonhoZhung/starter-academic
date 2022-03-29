@@ -36,11 +36,11 @@ V. Opinion
 #### I. Background
 분자의 특성을 예측하는 것은 목적에 맞는 새로운 분자를 디자인하는데 필수적이다. 가령 약물 분자를 디자인 한다면, 분자의 독성이나 용해도 등을 예측해야 할 것이다. 하지만 탐색 가능한 분자의 공간(chemical space)은 너무나 넓어, 이러한 특성을 만족하는 분자를 실험이나 *ab-initio* 양자 계산을 통해 찾는 것은 시간적으로나 금전적으로 큰 부담이 된다. 따라서, 최근(참고로 이 논문은 2017년도 논문이다.)에는 딥 러닝을 이용한 분자의 특성을 예측하는 방법이 떠오르고 있다. 특히, 이번 포스팅에서는 분자의 3차원 구조를 다루는 방법에 초점을 맞춰 알아볼 것이다.
 
-주어진 3차원 분자를 나타내는 방법(representation)에는 어떤 것들이 있을까? 제일 간단한 표현법은 아마도 3차원 격자(**grid**)를 이용한 방법일 것이다. 각각의 격자가 일정 간격으로 떨어진 3차원 공간상의 $(x,y,z)$ 좌표를 나타내며, 원자의 정보를 그 위치에 해당하는 격자에 넣어줌으로서 분자를 표현할 수 있다. 이러한 표현법은 3차원 convolutional neural network(3D CNN)을 통해 원하는 특성을 예측하는데에 사용할 수 있다.
+주어진 3차원 분자를 나타내는 방법(representation)에는 어떤 것들이 있을까? 제일 간단한 표현법은 아마도 3차원 격자(grid)를 이용한 방법일 것이다. 각각의 격자가 일정 간격으로 떨어진 3차원 공간상의 $(x,y,z)$ 좌표를 나타내며, 원자의 정보를 그 위치에 해당하는 격자에 넣어줌으로서 분자를 표현할 수 있다. 이러한 표현법은 3차원 convolutional neural network(3D CNN)을 통해 원하는 특성을 예측하는데에 사용할 수 있다.
 
-하지만 3D CNN을 분자에 사용하는데에는 크게 네 가지 문제가 있다. 첫 번째는, 격자 형태로 좌표를 나타내게 되면 위치의 분포가 불연속적이게 된다는 것이다. 격자의 간격을 좁히면 보다 높은 해상도로 분자를 표현할 수 있겠지만, 사용되는 표현법의 크기는 $O(n^3)$으로 해상도를 높이는 데에는 한계가 있다. 두 번째는, 모델이 input의 크기에 대해 scalable하지 않다. 이는, 학습할 때 사용한 격자의 전체 크기를 초과하는 분자는 예측의 input으로 사용할 수 없음을 의미한다. 또한, 3D CNN은 rotation에 대해 equivariant하지 않다. Equivariance에 관한 내용은 [이 링크]()를 참고하자. 이는 주어진 분자의 좌표가 공간상에서 회전하게 되면 원자들의 상대적인 위치는 같더라도 모델이 다른 결과를 예측하게 한다. 마지막으로, 분자를 격자로 나타내면 분자내의 결합(bonding)에 관한 정보를 포함할 수 없다. 
+하지만 3D CNN을 분자에 사용하는데에는 크게 네 가지 문제가 있다. 첫 번째는, 격자 형태로 좌표를 나타내게 되면 위치의 분포가 불연속적이게 된다는 것이다. 격자의 간격을 좁히면 보다 높은 해상도로 분자를 표현할 수 있겠지만, 사용되는 표현법의 크기는 $O(n^3)$으로 해상도를 높이는 데에는 한계가 있다. 두 번째는, 모델이 input의 크기에 대해 scalable하지 않다. 이는, 학습할 때 사용한 격자의 전체 크기를 초과하는 분자는 예측의 input으로 사용할 수 없음을 의미한다. 또한, 3D CNN은 rotation에 대해 equivariant하지 않다. Equivariance에 관한 내용은 [이 링크](https://www.sciencedirect.com/science/article/pii/S2589597420302641)를 참고하자. 이는 주어진 분자의 좌표가 공간상에서 회전하게 되면 원자들의 상대적인 위치는 같더라도 모델이 다른 결과를 예측하게 한다. 마지막으로, 분자를 격자로 나타내면 분자내의 결합(bonding)에 관한 정보를 포함할 수 없다. 
 
-또 다른 표현법으로는 그래프(**graph**)를 사용할 수 있다. 그래프 $G = (V, E)$는 node $v_i\in V$와 edge $e_{ij}\in E$로 이루어져있으며, 분자에서 node는 원자, edge는 원자간 결합 또는 상호작용을 의미한다. 원자 사이의 거리 $d_{ij}=\Vert\mathbf{r}_i-\mathbf{r}_j\Vert_2$를 edge 정보로 활용(거리를 일정 간격으로 나누어 one-hot vector로 만들 수 있다)하면 분자의 3차원 정보를 담을 수 있다. 이렇게 표현된 분자 그래프는 graph neural network(GNN)을 통해 물성을 예측할 수 있다. 그래프 표현법의 장점은 roto-translation에 대해 equivariant하며, 원자들 사이의 pairwise feature(거리, 결합 정보 등)를 모델 학습에 제공해 줄 수 있다는 것이다. 다만, 앞서 3D CNN의 문제점으로 이야기한, 거리의 불연속적인 표현은 여전히 해결되어야 할 문제이다.
+또 다른 표현법으로는 그래프(graph)를 사용할 수 있다. 그래프 $G = (V, E)$는 node $v_i\in V$와 edge $e_{ij}\in E$로 이루어져있으며, 분자에서 node는 원자, edge는 원자간 결합 또는 상호작용을 의미한다. 원자 사이의 거리 $d_{ij}=\Vert\mathbf{r}_i-\mathbf{r}_j\Vert_2$를 edge 정보로 활용(거리를 일정 간격으로 나누어 one-hot vector로 만들 수 있다)하면 분자의 3차원 정보를 담을 수 있다. 이렇게 표현된 분자 그래프는 graph neural network(GNN)을 통해 물성을 예측할 수 있다. 그래프 표현법의 장점은 roto-translation에 대해 equivariant하며, 원자들 사이의 pairwise feature(거리, 결합 정보 등)를 모델 학습에 제공해 줄 수 있다는 것이다. 다만, 앞서 3D CNN의 문제점으로 이야기한, 거리의 불연속적인 표현은 여전히 해결되어야 할 문제이다.
 
 <br>
 
@@ -67,7 +67,7 @@ SchNet의 구조는 아래 그림과 같다. $n$개의 원자로 이루어진 �
 
 1. Continuous-filter Convolutional (*cfconv*) layer
 
-    $R$로부터 계산한 $d_{ij}=\Vert\mathbf{r}_i-\mathbf{r}_j\Vert$를 위에서 소개한 식과 같이 RBF로 expand 한다. 아래 식에서의 $W^l$이 filter-generating 함수이다. 이를 $X^l$와 elemet-wise product하여 다음 layer의 feature vector를 얻는다.
+    $R$로부터 계산한 $d_{ij}=\Vert\mathbf{r}_i-\mathbf{r}_j\Vert$를 위에서 소개한 식과 같이 RBF로 expand 한다. 아래 식에서의 $W^l$이 filter-generating 함수이다. 이를 $X^l$와 element-wise product하여 다음 layer의 feature vector를 얻는다.
 
     $$\mathbf{x}_i^{l+1}=(X^l*W^l)_i=\sum_j\mathbf{x}^l_j\circ W^l(\mathbf{r}_i-\mathbf{r}_j),W^l:\mathbb{R}^3\to\mathbb{R}^F$$
 
