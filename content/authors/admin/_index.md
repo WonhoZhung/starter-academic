@@ -4,11 +4,9 @@ role: Ph.D. student in Chemistry, KAIST
 bio: My research interests include applying deep learning to solve problems in
   chemistry and biology.
 interests:
-  - AI for chemical & biological application
-  - Computer-Aided Drug Design (CADD)
-  - Graph Neural Networks (GNNs)
-  - Equivariant Neural Networks (ENNs)
-  - DL-based molecular docking & scoring
+  - DL for chemical & biological application
+  - Structure-based Drug Design (SBDD)
+  - 3D Graph Neural Networks (3D GNNs)
 social:
   - icon: envelope
     icon_pack: fas
@@ -37,8 +35,8 @@ email: ""
 superuser: true
 highlight_name: false
 ---
-I am a chemistry Ph.D. student at the Intelligent Chemistry Lab at KAIST (PI: Prof. Wooyoun Kim), where I research the use of deep learning for solving chemical and biological problems.
-Specifically, my goal is to find the hit compound by predicting the binding affinity, docking pose, etc. via drug-target complex modeling.
+I am a chemistry Ph.D. student at the Intelligent Chemistry Lab at KAIST (PI: Prof. Woo Youn Kim), where I research the use of deep learning for solving chemical and biological problems.
+Specifically, my goal is to find the hit compound by predicting the binding affinity, binding pose, etc. via drug-target complex modeling.
 My other interests include various 3D representations such as graphs and point clouds, and related equivariant neural networks.
 
 Besides research, I enjoy playing the violin. As a violinist in KAIST orchestra, I love to play classical music in ensembles.
