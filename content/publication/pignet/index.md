@@ -42,14 +42,15 @@ author_notes:
 publication: Chemical Science
 featured: false
 image:
-  caption: ""
+  caption: Inside front cover image of our paper
   focal_point: ""
   preview_only: false
-date: 2022-02-06T00:00:00Z
+  filename: http://cdn.aitimes.kr/news/photo/202205/25050_37573_2639.jpg
+date: 2022-02-06T00:00:00.000Z
 url_slides: ""
 title: "PIGNet: A physics-informed deep learning model toward generalized
   drug-target interaction predictions"
-publishDate: 2022-02-06T00:00:00Z
+publishDate: 2022-02-06T00:00:00.000Z
 url_poster: ""
 url_code: ""
 doi: 10.1039/d1sc06946b
