@@ -1,5 +1,6 @@
 ---
 title: "Tutorial: Tethered Docking with RxDock"
+subtitle: RxDock의 scaffold-based tethered docking 기능 맛보기
 date: 2022-06-15T06:28:42.995Z
 draft: false
 featured: false
