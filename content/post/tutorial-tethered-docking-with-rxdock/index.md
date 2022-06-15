@@ -23,7 +23,7 @@ conda install rxdock -c bioconda
 
 정상적으로 설치가 완료되었다면 `rbdock`, `rbcavity` 등의 rDock의 내장 프로그램들을 사용할 수 있습니다. 사용 가능한 프로그램들은 아래 리스트에서 확인할 수 있습니다.
 
-![Untitled](images/post6/Untitled.png)
+![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post6/Untitled.png?raw=true)
 
 여기서 tethered docking을 위해서 특별히 사용할 기능은 `sdtether`이며, 다음 섹션에서 중점적으로 알아보겠습니다.
 
@@ -167,11 +167,11 @@ END_SECTION
     
     예시1) `pymol $GRID_FILE $PROTEIN_FILE $LIGAND_FILE` 
     
-    ![Untitled](images/post6/Untitled 1.png)
+    ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post6/Untitled 1.png?raw=true)
     
     예시2) `isomesh cavity, $GRID_FILE, 0.99`
     
-    ![Untitled](images/post6/Untitled 2.png)
+    ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post6/Untitled 2.png?raw=true)
     
 5. **Docking**
     
@@ -185,7 +185,7 @@ END_SECTION
     
     예시1) Tethered docking의 결과
     
-    ![ezgif-3-2a4e186eb6.gif](images/post6/ezgif-3-2a4e186eb6.gif)
+    ![ezgif-3-2a4e186eb6.gif](https://github.com/WonhoZhung/starter-academic/blob/master/images/post6/ezgif-3-2a4e186eb6.gif?raw=true)
 
     설정한 scaffold의 구조는 거의 바뀌지 않고 도킹이 되었음을 확인할 수 있습니다.
     
