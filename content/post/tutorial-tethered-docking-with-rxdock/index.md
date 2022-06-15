@@ -167,11 +167,11 @@ END_SECTION
     
     예시1) `pymol $GRID_FILE $PROTEIN_FILE $LIGAND_FILE` 
     
-    ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post6/Untitled 1.png?raw=true)
+    ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post6/Untitled%201.png?raw=true)
     
     예시2) `isomesh cavity, $GRID_FILE, 0.99`
     
-    ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post6/Untitled 2.png?raw=true)
+    ![Untitled](https://github.com/WonhoZhung/starter-academic/blob/master/images/post6/Untitled%202.png?raw=true)
     
 5. **Docking**
     
