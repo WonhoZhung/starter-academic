@@ -4,6 +4,9 @@ date: 2022-06-17T09:01:17.966Z
 summary: OpenMM toolkit을 이용한 Protein-Ligand Complex MD Simulation 맛보기
 draft: false
 featured: false
+tags:
+  - MD
+  - SBDD
 image:
   filename: featured
   focal_point: Smart
