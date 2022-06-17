@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Protein-Ligand Complex MD Simulation with OpenMM"
 date: 2022-06-17T09:01:17.966Z
-summary: OpenMM toolkit을 이용한 Protein-Ligand Complex MD Simulation 맛보기
+summary: "**OpenMM toolkit**을 이용한 protein-ligand complex MD simulation 맛보기"
 draft: false
 featured: false
 tags:
@@ -12,7 +12,7 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-간단하게 python으로 molecular dymanics simulation을 돌릴 수 있도록 여러 기능들을 제공하는 [OpenMM toolkit](https://openmm.org)을 사용하여, 단백질-리간드 복합체에 대한 MD tutorial을 정리해보았습니다. [tdudgeon님의 GitHub](https://github.com/tdudgeon/simple-simulate-complex) 의 내용을 많이 참고하였습니다.
+간단하게 python으로 molecular dymanics simulation을 돌릴 수 있도록 여러 기능들을 제공하는 [OpenMM toolkit](https://openmm.org)을 사용하여, 단백질-리간드 복합체에 대한 MD tutorial을 정리해보았습니다. [tdudgeon님의 GitHub](https://github.com/tdudgeon/simple-simulate-complex) 내용을 많이 참고하였습니다.
 
 1. **프로그램 설치**
     
@@ -184,22 +184,28 @@ image:
     import matplotlib.pyplot as plt
     import pandas as pd
     import seaborn as sns
-    
+    import numpy as np
+    import sys
+
     t = md.load(
-    				output_traj_dcd,
-    				top=output_complex_pdb
+        sys.argv[1],
+        top=sys.argv[2]
     )
-    
+
     atoms = t.topology.select("chainid 1")
     rmsds_lig = md.rmsd(t, t, frame=0, atom_indices=atoms, parallel=True, precentered=False)
     atoms = t.topology.select("chainid 0 and backbone")
     rmsds_bck = md.rmsd(t, t, frame=0, atom_indices=atoms, parallel=True, precentered=False)
-    
-    df = pd.DataFrame({"time": t.time, "lig": rmsds_lig, "bck": rmsds_bck})
-    
-    sns.lineplot(df, x="time", y="lig")
-    sns.lineplot(df, x="time", y="bck")  
-    
+
+    df = pd.DataFrame({"time": t.time, "lig": np.array(rmsds_lig), "bck": np.array(rmsds_bck)})
+
+    sns.set_theme(style="darkgrid")
+    sns.lineplot(data=df, x="time", y="lig", label="Ligand")
+    sns.lineplot(data=df, x="time", y="bck", label="Backbone")
+
+    plt.xlabel('Time Step')
+    plt.ylabel('RMSD')
+
     plt.show()
     ```
     
