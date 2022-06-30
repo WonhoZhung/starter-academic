@@ -31,24 +31,24 @@ conda install rxdock -c bioconda
 
 2. **Ligand 및 Receptor의 Input file 준비**
 
-본격적으로 docking을 진행하기 전에 ligand와 receptor에 대해 input 형식을 정리해줘야합니다. (Smina와 다르게 input 파일 형식이 유동적이지 못한 점은 좀 아쉽습니다..) Ligand는 `.sd`(`.sdf` 가 아니다!), receptor는 `.mol2`로  맞춰주어야 합니다. OpenBabel 같은 파일 변환 프로그램을 이용하여 포멧을 바꿔줍시다.
+본격적으로 docking을 진행하기 전에 ligand와 receptor에 대해 input 형식을 정리해줘야합니다. (Smina와 다르게 input 파일 형식이 유동적이지 못한 점은 좀 아쉽습니다..) Ligand는 `.sdf`, receptor는 `.mol2`로  맞춰주어야 합니다. OpenBabel 같은 파일 변환 프로그램을 이용하여 포멧을 바꿔줍시다.
 
 Tethered docking에 필요한 구조 파일은 총 세 가지입니다.  
 
-- Reference ligand (`ref_lig.sd`)
-- Input ligand, to be docked (`mol_lig.sd`)
+- Reference ligand (`ref_lig.sdf`)
+- Input ligand, to be docked (`mol_lig.sdf`)
 - Receptor (`receptor.mol2`)
 
-추가로, constrain을 줄 substructure를 찾기 위하여 SMARTS descriptor를 필요로 합니다. 아래의 예시에서는 편의상 scaffold의 SMILES를 그대로 사용하였습니다. 이 substructure는 reference ligand와 input ligand에 모두 포함되어있어야 하며, `sdtether` 프로그램이 reference ligand의 좌표에 기반하여 input ligand의 초기 위치를 결정해주게 됩니다. 또한, `mol_lig.sd` 파일의 하단부에 tethered atom의 index들이 찍히게 됩니다. 아래와 같은 command로 해당 프로그램을 사용할 수 있습니다.
+추가로, constrain을 줄 substructure를 찾기 위하여 SMARTS descriptor를 필요로 합니다. 아래의 예시에서는 편의상 scaffold의 SMILES를 그대로 사용하였습니다. 이 substructure는 reference ligand와 input ligand에 모두 포함되어있어야 하며, `sdtether` 프로그램이 reference ligand의 좌표에 기반하여 input ligand의 초기 위치를 결정해주게 됩니다. 또한, `mol_lig.sdf` 파일의 하단부에 tethered atom의 index들이 찍히게 됩니다. 아래와 같은 command로 해당 프로그램을 사용할 수 있습니다.
 
 ```jsx
-sdtether ref_lig.sd mol_lig.sd $OUT_LIG_SD_FILE "$SMARTS"
+sdtether ref_lig.sdf mol_lig.sdf $OUT_LIG_SDF_FILE "$SMARTS"
 ```
 
 예시 1) Input command:
 
 ```jsx
-sdtether 1jzs_ligand_ref.sd 1jzs_ligand_0.sd 1jzs_ligand_input.sd 'C1COCC(CC2CO2)C1'
+sdtether 1jzs_ligand_ref.sdf 1jzs_ligand_0.sdf 1jzs_ligand_input.sdf 'C1COCC(CC2CO2)C1'
 ```
 
 예시 2) Standard output:
@@ -58,7 +58,7 @@ sdtether 1jzs_ligand_ref.sd 1jzs_ligand_0.sd 1jzs_ligand_input.sd 'C1COCC(CC2CO2
 DONE
 ```
 
-예시 3) Output ligand `.sd` file:
+예시 3) Output ligand `.sdf` file:
 
 ```jsx
 1jzs_ligand_0
@@ -139,7 +139,7 @@ END_SECTION
 ##################################################################
 SECTION MAPPER
     SITE_MAPPER RbtLigandSiteMapper
-    REF_MOL files/1jzs_ligand_ref.sd
+    REF_MOL files/1jzs_ligand_ref.sdf
     RADIUS 6.0
     SMALL_SPHERE 1.0
     MIN_VOLUME 100
@@ -182,7 +182,7 @@ END_SECTION
     이제 준비는 모두 끝났습니다. 아래와 같은 command로 도킹을 돌려봅시다.
     
     ```jsx
-    rbdock -i $LIGAND_INPUT_SD_FILE -o $LIGAND_OUTPUT_PREFIX -r $SYSTEM_PARAM_FILE -p dock.prm -n $NUM_DOCKING_PER_LIGAND --seed $SEED
+    rbdock -i $LIGAND_INPUT_SDF_FILE -o $LIGAND_OUTPUT_PREFIX -r $SYSTEM_PARAM_FILE -p dock.prm -n $NUM_DOCKING_PER_LIGAND --seed $SEED
     ```
     
     예시1) Tethered docking의 결과
