@@ -1,7 +1,7 @@
 ---
 authors:
   - Mohammad A. Saad
-  - Wonho Zhung
+  - admin
   - Margaret Elizabeth Stanley
   - Sydney Formica
   - Stacey Grimaldo-Garcia
