@@ -9,13 +9,13 @@ authors:
   - and Tayyaba Hasan*
 abstract: ""
 tags:
-  - Drug-Target Interaction
-  - Graph Neural Network
-  - Physics-informed Model
-  - Deep Learning
+  - Photodynamic Therapy
+  - Photoimmuno Conjugates
+  - Pancreatic Ductal Adenocarcinoma
+  - Tumor Microenvironment
 projects: []
 slides: ""
-url_pdf: https://pubs.rsc.org/en/content/articlepdf/2022/sc/d1sc06946b
+url_pdf: https://pubs.acs.org/doi/pdf/10.1021/acs.molpharmaceut.2c00260
 publication_types:
   - "2"
 url_dataset: ""
@@ -24,9 +24,6 @@ publication_short: Mol. Pharmaceutics
 url_source: ""
 url_video: ""
 author_notes:
-  - Equal contribution
-  - Equal contribution
-  - Equal contribution
 publication: Molecular Pharmaceutics
 featured: false
 image:
