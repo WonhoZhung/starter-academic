@@ -12,6 +12,8 @@ authors:
   - Girgis Obaid
   - Tayyaba Hasan*
 doi: https://doi.org/10.1021/acs.molpharmaceut.2c00260
+url_pdf: https://pubs.acs.org/doi/pdf/10.1021/acs.molpharmaceut.2c00260
+publishDate: 2022-02-06T00:00:00.000Z
 publication: Molecular Pharmaceutics
 publication_short: Mol. Pharmaceutics
 draft: false
