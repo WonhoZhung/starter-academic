@@ -1,12 +1,13 @@
 ---
 title: Wonho Zhung
-role: Ph.D. student in Chemistry, KAIST
+role: Ph.D. student in Intelligent Chemistry LAB, KAIST
 bio: My research interests include applying deep learning to solve problems in
   chemistry and biology.
 interests:
   - DL for chemical & biological application
   - Structure-based Drug Design (SBDD)
   - 3D Graph Neural Networks (3D GNNs)
+  - Generative models
 social:
   - icon: envelope
     icon_pack: fas
@@ -35,8 +36,6 @@ email: ""
 superuser: true
 highlight_name: false
 ---
-I am a chemistry Ph.D. student at the Intelligent Chemistry Lab at KAIST (PI: Prof. Woo Youn Kim), where I research the use of deep learning for solving chemical and biological problems.
-Specifically, my goal is to find the hit compound by predicting the binding affinity, binding pose, etc. via drug-target complex modeling.
-My other interests include various 3D representations such as graphs and point clouds, and related equivariant neural networks.
+I am a Ph.D. student at the Intelligent Chemistry Lab at KAIST (PI: Prof. Woo Youn Kim). My goal is to devise deep learning strategies for finding hit compounds to lessen the time and cost consumed in early-stage drug discovery. I’m currently working on protein-ligand binding affinity prediction and generative modeling for structure-based ligand design. Other approaches regarding the biochemical application of deep learning are highly intrigued.
 
-Besides research, I enjoy playing the violin. As a violinist in KAIST orchestra, I love to play classical music in ensembles.
+Besides research, I enjoy playing the violin. As a violinist in the KAIST orchestra, I love playing classical music in ensembles.
