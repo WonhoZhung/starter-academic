@@ -33,9 +33,9 @@ publication_short: ""
 url_source: ""
 url_video: ""
 author_notes:
-  - Equal contribution
-  - Equal contribution
-  - Equal contribution
+  - First
+  - Second
+  - Corresponding author
 doi: 10.26434/chemrxiv-2023-jsjwx
 publication: ChemRxiv
 featured: false
