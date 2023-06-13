@@ -20,7 +20,7 @@ abstract: Deep generative models have been the subject of immense interest in
   leveraging the site-specific interaction condition suitable for designing
   ligands for various purposes.
 slides: ""
-url_pdf: https://pubs.rsc.org/en/content/articlepdf/2022/sc/d1sc06946b
+url_pdf: https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/6482d9dbbe16ad5c57af1937/original/a-protein-ligand-interaction-focused-3d-molecular-generative-framework-for-generalizable-structure-based-drug-design.pdf
 publication_types:
   - "3"
 authors:
@@ -33,8 +33,8 @@ publication_short: ""
 url_source: ""
 url_video: ""
 author_notes:
-  - First
-  - Second
+  - First author
+  - Second author
   - Corresponding author
 doi: 10.26434/chemrxiv-2023-jsjwx
 publication: ChemRxiv
@@ -52,7 +52,7 @@ image:
   filename: ""
 date: 2023-06-13T09:25:51.269Z
 url_slides: ""
-publishDate: 2022-02-06T00:00:00.000Z
+publishDate: 2023-06-13T00:00:00.000Z
 url_poster: ""
 url_code: ""
 ---
