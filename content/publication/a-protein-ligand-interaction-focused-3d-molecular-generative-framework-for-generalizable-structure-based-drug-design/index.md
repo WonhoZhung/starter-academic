@@ -22,7 +22,7 @@ abstract: Deep generative models have been the subject of immense interest in
 slides: ""
 url_pdf: https://pubs.rsc.org/en/content/articlepdf/2022/sc/d1sc06946b
 publication_types:
-  - "2"
+  - "3"
 authors:
   - Wonho Zhung
   - Hyeongwoo Kim
