@@ -38,4 +38,4 @@ highlight_name: false
 ---
 I am a Ph.D. student at the Intelligent Chemistry Lab at KAIST (PI: Prof. Woo Youn Kim). My goal is to devise deep learning strategies for finding hit compounds to lessen the time and cost consumed in early-stage drug discovery. I’m currently working on protein-ligand binding affinity prediction and generative modeling for structure-based ligand design. Other approaches regarding the biochemical application of deep learning are highly intrigued.
 
-Besides research, I enjoy playing the violin. As a violinist in the KAIST orchestra, I love playing classical music in ensembles.
+Besides research, I love playing the violin. As a violinist in the KAIST orchestra, I enjoy performing classical music in ensembles.
