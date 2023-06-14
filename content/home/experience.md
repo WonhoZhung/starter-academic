@@ -38,7 +38,7 @@ experience:
     company_url: 'https://wooyoun.kaist.ac.kr'                          
     location: Dept. of Chemistry, KAIST, Republic of Korea                        
     date_start: '2022-03-01'                                                      
-    date_end: '2022-8-31'                                                        
+    date_end: '2022-08-31'                                                        
     description: |2-                                                              
         Spatially Constrained 3D Scaffold-based Molecular Generative Modeling Toward a Controllable Drug Design.  
         (Supervised by Prof. Wooyoun Kim, Dept. of Chemistry, KAIST)   
