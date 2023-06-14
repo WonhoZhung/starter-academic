@@ -31,6 +31,7 @@ experience:
     description: |2-                                                              
         A Protein-Ligand Interaction-focused 3D Molecular Generative Framework for Generalizable Structure-based Drug Design.  
         (Supervised by Prof. Wooyoun Kim, Dept. of Chemistry, KAIST)   
+        
   - title: Research Project                                               
     company: Intelligent Chemistry Lab (ICL)                                      
     company_url: 'https://wooyoun.kaist.ac.kr'                          
