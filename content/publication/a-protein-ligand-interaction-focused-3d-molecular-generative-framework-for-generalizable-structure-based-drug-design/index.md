@@ -1,43 +1,37 @@
 ---
-title: A Protein-Ligand Interaction-focused 3D Molecular Generative Framework
-  for Generalizable Structure-based Drug Design
-abstract: Deep generative models have been the subject of immense interest in
-  various fields of science. While seeking a molecule that favorably binds to a
-  target is a long-established goal of drug design, various generative models
-  have emerged to reach the goal. Here, we employ the concept of intermolecular
-  interactions between a protein and a ligand in a 3D molecular generative
-  model, empowering the generalizable structure-based drug design. Inspired by
-  how the practitioners manage to improve the potency of a ligand toward a
-  target protein, we devised a strategy where prior knowledge of appropriate
-  interactions navigates the ligand generation. We thus propose an
-  interaction-focused generative framework, which establishes a local
-  interaction condition to capture the surrounding pocket environment. We
-  demonstrate that the condition enables precise control of ligand generation,
-  justifying its effectiveness in guiding a ligand design inside a binding
-  pocket. Through this strategy, the generated ligands could stably bind to the
-  target pocket by forming favorable interactions, regardless of pocket type.
-  Furthermore, we highlight the broad applicability of our framework by
-  leveraging the site-specific interaction condition suitable for designing
-  ligands for various purposes.
+title: 3D molecular generative framework for interaction-guided drug design
+abstract: Deep generative modeling has a strong potential to accelerate drug
+  design. However, existing generative models often face challenges in
+  generalization due to limited data, leading to less innovative designs with
+  often unfavorable interactions for unseen target proteins. To address these
+  issues, we propose an interaction-aware 3D molecular generative framework that
+  enables interaction-guided drug design inside target binding pockets. By
+  leveraging universal patterns of protein-ligand interactions as prior
+  knowledge, our model can achieve high generalizability with limited
+  experimental data. Its performance has been comprehensively assessed by
+  analyzing generated ligands for unseen targets in terms of binding pose
+  stability, affinity, geometric patterns, diversity, and novelty. Moreover, the
+  effective design of potential mutant-selective inhibitors demonstrates the
+  applicability of our approach to structure-based drug design.
 slides: ""
 url_pdf: https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/6482d9dbbe16ad5c57af1937/original/a-protein-ligand-interaction-focused-3d-molecular-generative-framework-for-generalizable-structure-based-drug-design.pdf
 publication_types:
-  - "3"
+  - "2"
 authors:
   - Wonho Zhung
   - Hyeongwoo Kim
   - Woo Youn Kim*
 url_dataset: ""
 url_project: ""
-publication_short: ""
+publication_short: Nat. Comm.
 url_source: ""
 url_video: ""
 author_notes:
   - First author
   - Second author
   - Corresponding author
-doi: 10.26434/chemrxiv-2023-jsjwx
-publication: ChemRxiv
+doi: 10.1038/s41467-024-47011-2
+publication: Nature Communications
 featured: false
 tags:
   - Structure-based drug design
@@ -49,7 +43,7 @@ image:
   caption: ""
   focal_point: ""
   preview_only: false
-  filename: ""
+  filename: figure-1.jpg
 date: 2023-06-13T09:25:51.269Z
 url_slides: ""
 publishDate: 2023-06-13T00:00:00.000Z
