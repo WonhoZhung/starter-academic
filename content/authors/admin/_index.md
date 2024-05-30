@@ -1,6 +1,7 @@
 ---
 title: Wonho Zhung
-role: Ph.D. student in Intelligent Chemistry LAB, KAIST
+role: Ph.D. Student in Intelligent Chemistry Lab (ICL), advised Prof. Woo Youn
+  Kim in Korea Advanced Institute of Science and Technology (KAIST)
 bio: My research interests include applying deep learning to solve problems in
   chemistry and biology.
 interests:
