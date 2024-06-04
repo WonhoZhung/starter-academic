@@ -4,7 +4,7 @@ abstract: Advancements in deep generative modeling have changed the paradigm of 
 slides: ""
 url_pdf: https://arxiv.org/pdf/2405.16861
 publication_types:
-  - "2"
+  - "3"
 authors:
   - admin
   - Joongwon Lee
