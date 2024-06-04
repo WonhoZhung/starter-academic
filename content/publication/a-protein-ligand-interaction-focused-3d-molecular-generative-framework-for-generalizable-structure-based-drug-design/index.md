@@ -18,7 +18,7 @@ url_pdf: https://www.nature.com/articles/s41467-024-47011-2
 publication_types:
   - "2"
 authors:
-  - Wonho Zhung
+  - admin
   - Hyeongwoo Kim
   - Woo Youn Kim*
 url_dataset: ""
@@ -26,10 +26,7 @@ url_project: ""
 publication_short: Nat. Comm.
 url_source: ""
 url_video: ""
-author_notes:
-  - First author
-  - Second author
-  - Corresponding author
+author_notes: ""
 doi: 10.1038/s41467-024-47011-2
 publication: Nature Communications
 featured: false
