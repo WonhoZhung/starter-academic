@@ -1,5 +1,5 @@
 ---
-title: 3D molecular generative framework for interaction-guided drug design
+title: 3D Molecular Generative Framework for Interaction-guided Drug Design
 abstract: Deep generative modeling has a strong potential to accelerate drug
   design. However, existing generative models often face challenges in
   generalization due to limited data, leading to less innovative designs with
