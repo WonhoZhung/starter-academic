@@ -17,7 +17,6 @@ url_video: ""
 author_notes:
   - Equal contribution
   - Equal contribution
-  - Corresponding author
 doi: 10.1002/wcms.1705
 publication: Wiley Interdisciplinary Reviews-Computational Molecular Science
 featured: false
