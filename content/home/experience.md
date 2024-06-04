@@ -27,10 +27,30 @@ experience:
     company: Intelligent Chemistry Lab (ICL)                                      
     company_url: 'https://wooyoun.kaist.ac.kr'                          
     location: Dept. of Chemistry, KAIST, Republic of Korea                        
-    date_start: '2022-09-01'                                                      
+    date_start: '2024-02-01'                                                      
     date_end: ''                                                        
     description: |2-                                                              
-        A Protein-Ligand Interaction-focused 3D Molecular Generative Framework for Generalizable Structure-based Drug Design.  
+        Non-covalent Interaction-generative Diffusion Model for Reliable 3D Molecule Design.  
+        (Supervised by Prof. Wooyoun Kim, Dept. of Chemistry, KAIST)   
+
+  - title: Research Project                                               
+    company: Intelligent Chemistry Lab (ICL)                                      
+    company_url: 'https://wooyoun.kaist.ac.kr'                          
+    location: Dept. of Chemistry, KAIST, Republic of Korea                        
+    date_start: '2023-09-01'                                                      
+    date_end: ''                                                        
+    description: |2-                                                              
+        Discovering Bioisosteres with Deep Learning for a Fine Control of Multiple Molecular Properties.  
+        (Supervised by Prof. Wooyoun Kim, Dept. of Chemistry, KAIST)   
+
+  - title: Research Project                                               
+    company: Intelligent Chemistry Lab (ICL)                                      
+    company_url: 'https://wooyoun.kaist.ac.kr'                          
+    location: Dept. of Chemistry, KAIST, Republic of Korea                        
+    date_start: '2022-09-01'                                                      
+    date_end: '2024-03-27'                                                        
+    description: |2-                                                              
+        3D Molecular Generative Framework for Interaction-guided Drug Design.  
         (Supervised by Prof. Wooyoun Kim, Dept. of Chemistry, KAIST)   
         
   - title: Research Project                                               
