@@ -43,8 +43,8 @@ image:
   caption: ""
   focal_point: ""
   preview_only: false
-  filename: https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41467-024-47011-2/MediaObjects/41467_2024_47011_Fig1_HTML.png
-date: 2023-06-13T09:25:51.269Z
+  filename: figure-1.jpg
+date: 2024-03-27T09:25:51.269Z
 url_slides: ""
 publishDate: 2024-03-27T00:00:00.000Z
 url_poster: ""
