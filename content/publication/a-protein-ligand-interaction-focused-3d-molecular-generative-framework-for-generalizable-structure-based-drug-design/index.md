@@ -14,7 +14,7 @@ abstract: Deep generative modeling has a strong potential to accelerate drug
   effective design of potential mutant-selective inhibitors demonstrates the
   applicability of our approach to structure-based drug design.
 slides: ""
-url_pdf: https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/6482d9dbbe16ad5c57af1937/original/a-protein-ligand-interaction-focused-3d-molecular-generative-framework-for-generalizable-structure-based-drug-design.pdf
+url_pdf: https://www.nature.com/articles/s41467-024-47011-2
 publication_types:
   - "2"
 authors:
@@ -46,7 +46,7 @@ image:
   filename: figure-1.jpg
 date: 2023-06-13T09:25:51.269Z
 url_slides: ""
-publishDate: 2023-06-13T00:00:00.000Z
+publishDate: 2024-03-27T00:00:00.000Z
 url_poster: ""
 url_code: ""
 ---
