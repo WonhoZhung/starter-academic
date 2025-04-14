@@ -22,6 +22,7 @@ author_notes:
   - Equal contribution
   - Equal contribution
 doi: https://doi.org/10.1186/s13321-025-00992-8
+url_pdf: https://jcheminf.biomedcentral.com/counter/pdf/10.1186/s13321-025-00992-8.pdf
 publication: Journal of Cheminformatics
 publication_short: J. Cheminform.
 abstract: "Liver toxicity poses a critical challenge in drug development due to
