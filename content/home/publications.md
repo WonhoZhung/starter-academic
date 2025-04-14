@@ -28,7 +28,7 @@ content:
     publication_type: ''
     author: admin
     exclude_featured: false
-  all_link: publication
+  all_link: /publication/
   all_link_text: 'See all publications'
 design:
   # Choose a view for the listings:
