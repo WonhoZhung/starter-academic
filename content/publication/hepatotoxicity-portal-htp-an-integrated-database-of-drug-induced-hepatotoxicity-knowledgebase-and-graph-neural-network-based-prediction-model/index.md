@@ -41,7 +41,7 @@ abstract: "Liver toxicity poses a critical challenge in drug development due to
   database. Our model demonstrated excellent performance, achieving an area
   under the ROC curve (AUROC) of 0.761, surpassing existing methods for
   hepatotoxicity prediction. The HTP is publicly accessible at
-  https://kobic.re.kr/htp/, offering both curated data and prediction services
+  https://kobic.re.kr/htp , offering both curated data and prediction services
   through an intuitive interface, thus effectively supporting drug development
   efforts."
 draft: false
