@@ -30,9 +30,14 @@ organizations:
     url: https://wooyoun.kaist.ac.kr
 education:
   courses:
+    - course: MSc & PhD Integrated Program in Chemistry
+      institution: Korea Advanced Institute of Science and Technology (KAIST)
     - course: BSc in Chemistry and Biological Science (Double Major)
       institution: Korea Advanced Institute of Science and Technology (KAIST)
       year: 2020
+    - institution: Korea Science Academy of KAIST (KSA)
+      course: High school
+      year: 2016
 email: ""
 superuser: true
 highlight_name: false
