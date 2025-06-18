@@ -23,7 +23,7 @@ authors:
   - Woo Youn Kim*
 url_dataset: ""
 url_project: ""
-publication_short: Nat. Comm.
+publication_short: Nat. Comm
 url_source: ""
 url_video: ""
 author_notes: ""
