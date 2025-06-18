@@ -15,6 +15,10 @@ publication: Advanced Science
 publication_short: Adv. Sci
 draft: false
 featured: false
+categories:
+  - drug design
+  - 3D molecular generative model
+  - non-covalent interaction
 image:
   filename: featured
   focal_point: Smart
