@@ -9,8 +9,8 @@ authors:
   - Jisu Seo
   - Woo Youn Kim
 author_notes:
-  - equal
-  - equal
+  - Equal contribution
+  - Equal contribution
 publication: Advanced Science
 publication_short: Adv. Sci
 draft: false
