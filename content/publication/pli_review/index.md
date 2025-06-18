@@ -1,6 +1,19 @@
 ---
-title: "Toward Generalizable Structure-based Deep Learning Models for Protein–ligand Interaction Prediction: Challenges and Strategies"
-abstract: Accurate and rapid prediction of protein–ligand interactions (PLIs) is the fundamental challenge of drug discovery. Deep learning methods have been harnessed for this purpose, yet the insufficient generalizability of PLI prediction prevents their broader impact on practical applications. Here, we highlight the significance of PLI model generalizability by conceiving PLIs as a function defined on infinitely diverse protein–ligand pairs and binding poses. To delve into the generalization challenges within PLI predictions, we comprehensively explore the evaluation strategies to assess the generalizability fairly. Moreover, we categorize structure-based PLI models with leveraged strategies for learning generalizable features from structure-based PLI data. Finally, we conclude the review by emphasizing the need for accurate pose-predicting methods, which is a prerequisite for more accurate PLI predictions.
+title: "Toward Generalizable Structure-based Deep Learning Models for
+  Protein–ligand Interaction Prediction: Challenges and Strategies"
+abstract: Accurate and rapid prediction of protein–ligand interactions (PLIs) is
+  the fundamental challenge of drug discovery. Deep learning methods have been
+  harnessed for this purpose, yet the insufficient generalizability of PLI
+  prediction prevents their broader impact on practical applications. Here, we
+  highlight the significance of PLI model generalizability by conceiving PLIs as
+  a function defined on infinitely diverse protein–ligand pairs and binding
+  poses. To delve into the generalization challenges within PLI predictions, we
+  comprehensively explore the evaluation strategies to assess the
+  generalizability fairly. Moreover, we categorize structure-based PLI models
+  with leveraged strategies for learning generalizable features from
+  structure-based PLI data. Finally, we conclude the review by emphasizing the
+  need for accurate pose-predicting methods, which is a prerequisite for more
+  accurate PLI predictions.
 slides: ""
 url_pdf: https://wires.onlinelibrary.wiley.com/doi/epdf/10.1002/wcms.1705
 publication_types:
@@ -11,7 +24,7 @@ authors:
   - Woo Youn Kim*
 url_dataset: ""
 url_project: ""
-publication_short: WIREs Comput Mol Sci.
+publication_short: WIREs Comput Mol Sci
 url_source: ""
 url_video: ""
 author_notes:
