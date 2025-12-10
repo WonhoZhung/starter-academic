@@ -21,7 +21,7 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/WonhoZhung
-  - icon: square-linkedin
+  - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/wonho-zhung-1a753b292/
 organizations:
@@ -35,7 +35,7 @@ education:
       institution: Korea Advanced Institute of Science and Technology (KAIST)
       year: 2020
     - institution: Korea Science Academy of KAIST (KSA)
-      course: High school
+      course: High School
       year: 2016
 email: ""
 superuser: true
