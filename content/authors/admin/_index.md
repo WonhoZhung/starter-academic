@@ -7,8 +7,7 @@ bio: My research interests include applying deep learning to solve problems in
 interests:
   - DL for chemical & biological application
   - Structure-based Drug Design (SBDD)
-  - 3D Graph Neural Networks (3D GNNs)
-  - Generative models
+  - Generative Models
 social:
   - icon: envelope
     icon_pack: fas
@@ -22,9 +21,9 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/WonhoZhung
-  - icon: instagram
+  - icon: square-linkedin
     icon_pack: fab
-    link: https://www.instagram.com/one_know_wonho/
+    link: https://www.linkedin.com/in/wonho-zhung-1a753b292/
 organizations:
   - name: Intelligent Chemistry Lab
     url: https://wooyoun.kaist.ac.kr
@@ -42,6 +41,7 @@ email: ""
 superuser: true
 highlight_name: false
 ---
-I am a Ph.D. student at the Intelligent Chemistry Lab at KAIST (PI: Prof. Woo Youn Kim). My goal is to devise deep learning strategies for finding hit compounds to lessen the time and cost consumed in early-stage drug discovery. I’m currently working on protein-ligand binding affinity prediction and generative modeling for structure-based ligand design. Other approaches regarding the biochemical application of deep learning are highly intrigued.
-
-Besides research, I love playing the violin. As a violinist in the KAIST orchestra, I enjoy performing classical music in ensembles.
+I am a Ph.D. student at the Intelligent Chemistry Lab at KAIST (PI: Prof. Woo Youn Kim). My research focuses on developing deep learning methodologies to advance structure-based drug discovery. My work spans molecular design and protein-ligand interaction prediction while integrating physical and chemical principles into deep learning models to enable more generalizable and interpretable drug discovery. I am currently interested in (but not limited to) the following topics:
+* AI for chemistry and biology
+* Molecular generative modeling
+* Structure-based drug design
