@@ -1,6 +1,6 @@
 ---
 title: Wonho Zhung
-role: Ph.D. Student, KAIST
+role: Ph.D. Candidate, KAIST
 avatar_filename: avatar.jpeg
 bio: My research interests include applying deep learning to solve problems in
   chemistry and biology.
